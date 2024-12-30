@@ -1,1 +1,6 @@
+# Requirements
+# Primero deben instalar node.js, si ya lo tienen instalen las dependencias con =>
+npm i 
+
+# Luego deben instalar framer-motion y typewriter-effect con =>
 npm install framer-motion typewriter-effect
