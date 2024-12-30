@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import FeaturesAccordion from "@/components/FeaturesAccordion";
+import About from "@/components/About";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
@@ -30,7 +30,7 @@ export default function Home() {
             </Suspense>
             <motion.main>
               <Hero />
-              <FeaturesAccordion />
+              <About />
               <Pricing />
               <FAQ />
               <CTA />
