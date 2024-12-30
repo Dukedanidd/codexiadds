@@ -2,12 +2,12 @@ import themes from "daisyui/src/theming/themes";
 
 const config = {
   // REQUIRED
-  appName: "ShipeaRapido",
+  appName: "Codexiandds",
   // REQUIRED: a short description of your app for SEO tags (can be overwritten)
   appDescription:
-    "The NextJS boilerplate with all you need to build your SaaS, AI tool, or any other web app.",
+    "Somos una empresa de desarrollo de software que se especializa en generar soluciones a problemas complejos para diversas empresas, donde nos enfocamos en la innovación y la excelencia en el desarrollo de software, ya sea por medio de apps webs, aplicaciones móviles, o software personalizado.",
   // REQUIRED (no https://, not trialing slash at the end, just the naked domain)
-  domainName: "shipfa.st",
+  domainName: "codexiandds.com",
   crisp: {
     // Crisp website ID. IF YOU DON'T USE CRISP: just remove this => Then add a support email in this config file (mailgun.supportEmail) otherwise customer support won't work.
     id: "",
