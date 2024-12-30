@@ -53,7 +53,7 @@ const SplashScreen = ({ onComplete }) => {
                   .typeString('<br/>}')
                   .typeString('<span class="text-blue-400">;</span>')
                   .typeString('<br/><br/>')
-                  .typeString('<span class="text-gray-500">// Desarrollamos soluciones tecnológicas que impulsan el crecimiento de tu negocio</span>')
+                  .typeString('<span class="text-gray-500">{/* Desarrollamos soluciones tecnológicas que impulsan el crecimiento de tu negocio */}</span>')
                   .typeString('<br/><br/>')
                   .callFunction(() => {
                     document.querySelectorAll('.feature-item').forEach((el, i) => {
@@ -96,7 +96,7 @@ const SplashScreen = ({ onComplete }) => {
           transition={{ delay: 4 }}
           className="mt-16 text-center relative"
         >
-          <p className="text-gray-500 font-mono text-sm mb-4">// Click para continuar</p>
+          <p className="text-gray-500 font-mono text-sm mb-4">{/* Click para continuar */}</p>
           <motion.div
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
