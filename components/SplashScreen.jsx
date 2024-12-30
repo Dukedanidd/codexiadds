@@ -12,6 +12,7 @@ const SplashScreen = ({ onComplete }) => {
     <motion.div
       initial={{ backgroundColor: "#1a1b26" }}
       className="fixed inset-0 flex flex-col items-center justify-center"
+      data-theme="dark"
     >
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
