@@ -4,3 +4,12 @@ npm i
 
 # Luego deben instalar framer-motion y typewriter-effect con =>
 npm install framer-motion typewriter-effect
+
+# Luego deben instalar lucide-react con =>
+npm install lucide-react
+
+# Luego deben instalar react-icons con =>
+npm install react-icons
+
+
+
