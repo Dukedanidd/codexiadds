@@ -7,23 +7,47 @@ import { useRef, useState } from "react";
 
 const faqList = [
   {
-    question: "What do I get exactly?",
-    answer: <div className="space-y-2 leading-relaxed">Loreum Ipseum</div>,
+    question: "About our service",
+    answer: <div className="space-y-2 leading-relaxed">We offer customized development service customized to your business needs, we work whit you to create the best solution.</div>,
   },
   {
-    question: "Can I get a refund?",
+    question: "How the costs of development calculate?",
     answer: (
       <p>
-        Yes! You can request a refund within 7 days of your purchase. Reach out
-        by email.
+        The cost depends on the project's complexity, required features, and estimated time. We provide personalized quotes after an initial consultation.
       </p>
     ),
   },
   {
-    question: "I have another question",
+    question: "What is the development process like?",
     answer: (
-      <div className="space-y-2 leading-relaxed">Cool, contact us by email</div>
+      <div className="space-y-2 leading-relaxed">
+        <p>Our process includes:</p>
+        <ol>
+          <li>Initial consultation to understand your needs</li>
+          <li>Design and planning</li>
+          <li>Development and testing</li>
+          <li>Final delivery and post-launch support</li>
+        </ol>
+      </div>
     ),
+  },
+  {
+    question: "Support and Maintenance?",
+    answer: (
+      <div>
+        <p>We provide:</p>
+        <ul>
+          <li>
+            Technical support and maintenance options to ensure your project runs perfectly after the launch.
+          </li>
+          <li>
+            Assistance with any updates or improvements you need, whether adding new features or redesigning elements.
+          </li>
+        </ul>
+      </div>
+    ),
+    
   },
 ];
 
