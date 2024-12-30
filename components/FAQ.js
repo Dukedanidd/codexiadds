@@ -14,7 +14,7 @@ const faqList = [
     question: "How the costs of development calculate?",
     answer: (
       <p>
-        The cost depends on the project's complexity, required features, and estimated time. We provide personalized quotes after an initial consultation.
+        The cost depends on the project&apos;s complexity, required features, and estimated time. We provide personalized quotes after an initial consultation.
       </p>
     ),
   },
