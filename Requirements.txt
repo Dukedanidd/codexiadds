@@ -11,5 +11,6 @@ npm install lucide-react
 # Luego deben instalar react-icons con =>
 npm install react-icons
 
+npm install react react-dom
 
 

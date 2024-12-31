@@ -8,6 +8,7 @@ import About from "@/components/About";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import SplashScreen from '@/components/SplashScreen';
+import PortfolioCarousel from '@/components/Portfolio';
 
 export default function Home() {
   const [showSplash, setShowSplash] = useState(true);
@@ -29,6 +30,7 @@ export default function Home() {
             <motion.main>
               <Hero />
               <About />
+              <PortfolioCarousel />
               <FAQ />
             </motion.main>
             <Footer />
