@@ -8,7 +8,9 @@ import { useRef, useState } from "react";
 const faqList = [
   {
     question: "¿Qué servicios ofrece CodexiaDDS?",
-    answer: <div className="space-y-2 leading-relaxed">Ofrecemos desarrollo de software adaptado a las necesidades de tu negocio. Desde sitios básicos hasta plataformas avanzadas, trabajamos contigo para crear la mejor solución.</div>,
+    answer: <div className="space-y-2 leading-relaxed">
+      <p>Ofrecemos desarrollo de software adaptado a las necesidades de tu negocio. Desde sitios básicos hasta plataformas avanzadas, trabajamos contigo para crear la mejor solución.</p>
+    </div>,
   },
   {
     question: "¿Cómo se calculan los costos de los proyectos?",
