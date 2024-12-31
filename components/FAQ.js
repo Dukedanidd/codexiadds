@@ -7,44 +7,40 @@ import { useRef, useState } from "react";
 
 const faqList = [
   {
-    question: "About our service",
-    answer: <div className="space-y-2 leading-relaxed">We offer customized development service customized to your business needs, we work whit you to create the best solution.</div>,
+    question: "¿Qué servicios ofrece CodexiaDDS?",
+    answer: <div className="space-y-2 leading-relaxed">Ofrecemos desarrollo de software adaptado a las necesidades de tu negocio. Desde sitios básicos hasta plataformas avanzadas, trabajamos contigo para crear la mejor solución.</div>,
   },
   {
-    question: "How the costs of development calculate?",
+    question: "¿Cómo se calculan los costos de los proyectos?",
     answer: (
       <p>
-        The cost depends on the project&apos;s complexity, required features, and estimated time. We provide personalized quotes after an initial consultation.
+        El costo depende de la complejidad del proyecto, las funciones necesarias y el tiempo estimado. Ofrecemos presupuestos personalizados después de una consulta inicial.
       </p>
     ),
   },
   {
-    question: "What is the development process like?",
+    question: "¿Cómo es el proceso de desarrollo?",
     answer: (
       <div className="space-y-2 leading-relaxed">
-        <p>Our process includes:</p>
+        <p>Nuestro proceso incluye:</p>
         <ol>
-          <li>Initial consultation to understand your needs</li>
-          <li>Design and planning</li>
-          <li>Development and testing</li>
-          <li>Final delivery and post-launch support</li>
+          <li>Consulta inicial para entender tus necesidades.</li>
+          <li>Diseño y planificación.</li>
+          <li>Desarrollo y pruebas.</li>
+          <li>Entrega final y soporte post-lanzamiento</li>
         </ol>
       </div>
     ),
   },
   {
-    question: "Support and Maintenance?",
+    question: "¿Ofrecen soporte y mantenimiento?",
     answer: (
       <div>
-        <p>We provide:</p>
-        <ul>
-          <li>
-            Technical support and maintenance options to ensure your project runs perfectly after the launch.
-          </li>
-          <li>
-            Assistance with any updates or improvements you need, whether adding new features or redesigning elements.
-          </li>
-        </ul>
+
+        <p>Brindamos soporte técnico y opciones de mantenimiento para asegurarnos de que tu sitio funcione perfectamente después del lanzamiento, ademas podemos ayudarte con cualquier actualización o mejora que necesites, ya sea agregar nuevas funciones o rediseñar elementos.
+
+</p>
+
       </div>
     ),
     
