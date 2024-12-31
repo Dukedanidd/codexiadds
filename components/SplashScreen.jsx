@@ -18,7 +18,7 @@ const SplashScreen = ({ onComplete }) => {
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="bg-[#1e1f2a] p-12 rounded-lg border border-gray-700 shadow-xl max-w-4xl w-full mx-4 relative"
+        className="bg-[#1e1f2a] p-4 sm:p-12 rounded-lg border border-gray-700 shadow-xl max-w-4xl w-full mx-4 relative"
       >
         <motion.div
           className="flex space-x-2 mb-6"
@@ -69,21 +69,21 @@ const SplashScreen = ({ onComplete }) => {
             />
           </div>
 
-          <div className="grid grid-cols-3 gap-8 mt-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 mt-8 sm:mt-12">
             <motion.div
-              className="feature-item p-6 bg-gray-800 rounded opacity-0 text-green-400"
+              className="feature-item p-4 sm:p-6 bg-gray-800 rounded opacity-0 text-green-400 text-sm sm:text-base"
               style={{ transform: 'translateY(20px)', transition: 'all 0.3s ease' }}
             >
               ✓ Soluciones Personalizadas
             </motion.div>
             <motion.div
-              className="feature-item p-6 bg-gray-800 rounded opacity-0 text-green-400"
+              className="feature-item p-4 sm:p-6 bg-gray-800 rounded opacity-0 text-green-400 text-sm sm:text-base"
               style={{ transform: 'translateY(20px)', transition: 'all 0.3s ease' }}
             >
               ✓ Tecnología de Vanguardia
             </motion.div>
             <motion.div
-              className="feature-item p-6 bg-gray-800 rounded opacity-0 text-green-400"
+              className="feature-item p-4 sm:p-6 bg-gray-800 rounded opacity-0 text-green-400 text-sm sm:text-base"
               style={{ transform: 'translateY(20px)', transition: 'all 0.3s ease' }}
             >
               ✓ Equipo Experto
