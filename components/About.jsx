@@ -126,8 +126,8 @@ export default function AboutSection() {
           </motion.div>
         </motion.div>
 
-        {/* Línea central con gradiente y efecto brillante */}
-        <div className="absolute left-1/2 top-[200px] bottom-20 w-0.5 bg-gradient-to-b from-purple-500 to-blue-500">
+        {/* Línea central - ahora solo visible en pantallas grandes */}
+        <div className="absolute left-1/2 top-[200px] bottom-20 w-0.5 bg-gradient-to-b from-purple-500 to-blue-500 lg:block hidden">
           <div className="absolute w-1 h-20 bg-white blur-sm animate-pulse" 
                style={{ 
                  top: "50%",
@@ -152,32 +152,32 @@ export default function AboutSection() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
-                className={`flex items-center mb-24 ${
-                  index % 2 === 0 ? "justify-start" : "justify-end"
-                }`}
+                className={`flex items-center mb-24 
+                  ${index % 2 === 0 ? "lg:justify-start" : "lg:justify-end"}
+                  justify-center`}
               >
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className={`relative w-[calc(50%-40px)] p-8 bg-white/80 backdrop-blur-sm rounded-xl 
+                  className={`relative p-8 bg-white/80 backdrop-blur-sm rounded-xl 
                   shadow-lg transition-all duration-500 group hover:shadow-2xl 
-                  border border-gray-100 ${
-                    index % 2 === 0 ? "mr-auto" : "ml-auto"
-                  }`}
+                  border border-gray-100
+                  lg:w-[calc(50%-40px)] w-full max-w-xl
+                  ${index % 2 === 0 ? "lg:mr-auto" : "lg:ml-auto"}`}
                 >
-                  {/* Punto en la línea temporal con animación */}
+                  {/* Punto en la línea temporal - solo visible en pantallas grandes */}
                   <motion.div
                     whileHover={{ scale: 1.5 }}
                     className={`absolute top-1/2 w-4 h-4 rounded-full bg-gradient-to-r 
-                    from-purple-500 to-blue-500 z-10 ${
-                      index % 2 === 0 ? "-right-[42px]" : "-left-[42px]"
-                    }`}
+                    from-purple-500 to-blue-500 z-10 hidden lg:block
+                    ${index % 2 === 0 ? "-right-[42px]" : "-left-[42px]"}`}
                   >
                     <div className="absolute inset-0 rounded-full bg-purple-500 animate-ping opacity-20" />
                   </motion.div>
 
-                  {/* Línea conectora con gradiente */}
+                  {/* Línea conectora - solo visible en pantallas grandes */}
                   <div
                     className={`absolute top-1/2 h-0.5 w-8 bg-gradient-to-r from-purple-500 to-blue-500
+                    hidden lg:block
                     ${index % 2 === 0 ? "-right-8" : "-left-8"}`}
                   />
 
