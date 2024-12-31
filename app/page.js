@@ -5,9 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
-import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import SplashScreen from '@/components/SplashScreen';
 
@@ -31,9 +29,7 @@ export default function Home() {
             <motion.main>
               <Hero />
               <About />
-              <Pricing />
               <FAQ />
-              <CTA />
             </motion.main>
             <Footer />
           </motion.div>

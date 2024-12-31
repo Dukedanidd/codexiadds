@@ -10,8 +10,8 @@ import { motion } from "framer-motion";
 
 const links = [
   {
-    href: "/#pricing",
-    label: "Pricing",
+    href: "/#about",
+    label: "Sobre Nosotros",
   },
   {
     href: "/#testimonials",

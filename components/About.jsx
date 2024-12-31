@@ -78,7 +78,7 @@ export default function AboutSection() {
   const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8])
 
   return (
-    <section className="py-20 px-4 relative min-h-screen" ref={containerRef}>
+    <section id='about' className="py-20 px-4 relative min-h-screen" ref={containerRef}>
       {/* Fondo con patrón minimalista */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
         <div className="absolute inset-0 grid grid-cols-6 gap-4">
