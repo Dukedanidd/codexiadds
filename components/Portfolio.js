@@ -50,7 +50,7 @@ const Carousel = () => {
   }, []);
 
   return (
-    <section className="py-16 px-8 bg-gray-100" id="portfolio">
+    <section id="portfolio" className="py-16 px-8 bg-gray-100">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-3xl font-extrabold text-gray-800 mb-8">
           Nuestro Portafolio

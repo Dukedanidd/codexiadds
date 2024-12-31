@@ -14,8 +14,8 @@ const links = [
     label: "Sobre Nosotros",
   },
   {
-    href: "/#testimonials",
-    label: "Reviews",
+    href: "/#portfolio",
+    label: "Portafolio",
   },
   {
     href: "/#faq",
