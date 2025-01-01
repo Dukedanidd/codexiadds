@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ArrowRight } from 'lucide-react';
+import { motion } from "framer-motion";
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -27,15 +28,41 @@ const Form = () => {
     <section id="contact-form" className="relative bg-gradient-to-br from-purple-50/50 to-blue-50/50">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(67,56,202,0.05),rgba(255,255,255,0))]" />
       <div className="relative max-w-4xl mx-auto px-8 py-24">
-        <div className="p-8 rounded-2xl bg-white/80 backdrop-blur-sm border border-purple-500/10 shadow-xl shadow-purple-500/5">
-          <h2 className="text-4xl font-bold text-center mb-2 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="p-8 rounded-2xl bg-white/80 backdrop-blur-sm border border-purple-500/10 shadow-xl shadow-purple-500/5"
+        >
+          <motion.h2 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="text-4xl font-bold text-center mb-2 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent"
+          >
             Contáctanos
-          </h2>
-          <p className="text-center text-gray-600 mb-8">
+          </motion.h2>
+          
+          <motion.p 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="text-center text-gray-600 mb-8"
+          >
             Estamos aquí para ayudarte. ¡Envíanos un mensaje!
-          </p>
+          </motion.p>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <motion.form 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+            onSubmit={handleSubmit} 
+            className="space-y-6"
+          >
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="nombre" className="block text-sm font-medium text-gray-700 mb-2">
@@ -146,8 +173,8 @@ const Form = () => {
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </button>
             </div>
-          </form>
-        </div>
+          </motion.form>
+        </motion.div>
       </div>
     </section>
   );

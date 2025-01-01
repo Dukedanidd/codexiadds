@@ -4,7 +4,7 @@ import Typewriter from 'typewriter-effect';
 
 const SplashScreen = ({ onComplete }) => {
   const company = {
-    name: 'Codexiandds',
+    name: 'Codexiadds',
     mission: 'Transformar Ideas en Software Innovador'
   };
 
