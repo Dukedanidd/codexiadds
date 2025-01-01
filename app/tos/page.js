@@ -57,39 +57,88 @@ const TOS = () => {
           className="leading-relaxed whitespace-pre-wrap"
           style={{ fontFamily: "sans-serif" }}
         >
-          {`Last Updated: September 26, 2023
+          {`Términos y Condiciones de CodexiaDDS
 
-Welcome to ShipFast!
+Fecha de vigencia: ${new Date().toISOString().split('T')[0]}
 
-These Terms of Service ("Terms") govern your use of the ShipFast website at https://shipfa.st ("Website") and the services provided by ShipFast. By using our Website and services, you agree to these Terms.
+Bienvenido a CodexiaDDS. Estos Términos y Condiciones regulan el acceso y uso de nuestros servicios de desarrollo web profesional, inteligencia artificial, aprendizaje automático (Machine Learning), desarrollo de aplicaciones y consultoría tecnológica. Al utilizar nuestros servicios, usted acepta los presentes Términos y Condiciones. Si no está de acuerdo con alguno de ellos, le solicitamos no utilizar nuestros servicios.
 
-1. Description of ShipFast
+1. Definiciones
 
-ShipFast is a platform that offers a JavaScript code boilerplate to assist entrepreneurs in launching their startups more efficiently.
+- "CodexiaDDS": Se refiere a nuestra empresa, sus empleados, contratistas, afiliados y representantes.
+- "Usuario": Toda persona o entidad que accede o utiliza nuestros servicios.
+- "Servicios": Todos los productos y servicios proporcionados por CodexiaDDS, incluidos desarrollo de software, consultoría tecnológica y soluciones personalizadas.
 
-2. Ownership and Usage Rights
+2. Uso de los servicios
 
-When you purchase a package from ShipFast, you gain the right to download and use the code provided for creating applications. You own the code you create but do not have the right to resell it. We offer a full refund within 7 days of purchase, as specified in our refund policy.
+2.1. Elegibilidad
+Para utilizar nuestros servicios, debe:
+- Tener al menos 18 años o la edad legal aplicable en su jurisdicción.
+- Proporcionar información verídica y completa al registrarse o interactuar con nuestros servicios.
 
-3. User Data and Privacy
+2.2. Uso permitido
+El usuario se compromete a:
+- Utilizar los servicios solo para fines legales y de acuerdo con estos términos.
+- No reproducir, duplicar, vender o explotar cualquier parte de nuestros servicios sin nuestro consentimiento expreso.
+- No realizar actividades que interfieran con la funcionalidad de nuestros servicios o violen derechos de terceros.
 
-We collect and store user data, including name, email, and payment information, as necessary to provide our services. For details on how we handle your data, please refer to our Privacy Policy at https://shipfa.st/privacy-policy.
+3. Proyectos y entregables
 
-4. Non-Personal Data Collection
+3.1. Descripción de servicios
+CodexiaDDS proporcionará servicios según lo especificado en acuerdos individuales con cada cliente. Los términos específicos de los proyectos serán detallados en contratos o propuestas separados.
 
-We use web cookies to collect non-personal data for the purpose of improving our services and user experience.
+3.2. Modificaciones
+Cualquier modificación a los entregables o servicios contratados deberá ser acordada por ambas partes y podría generar costos adicionales.
 
-5. Governing Law
+3.3. Propiedad intelectual
+Salvo acuerdo en contrario, todo el software, código, diseños y otros materiales creados por CodexiaDDS son de nuestra propiedad intelectual hasta que el cliente realice el pago completo y final.
 
-These Terms are governed by the laws of France.
+4. Tarifas y pagos
 
-6. Updates to the Terms
+4.1. Facturación
+CodexiaDDS proporcionará facturas claras y detalladas antes o después de la entrega de los servicios, según lo acordado.
 
-We may update these Terms from time to time. Users will be notified of any changes via email.
+4.2. Retrasos en pagos
+Los pagos atrasados podrán estar sujetos a cargos por mora. CodexiaDDS se reserva el derecho de suspender los servicios en caso de impago.
 
-For any questions or concerns regarding these Terms of Service, please contact us at marc@shipfa.st.
+4.3. Reembolsos
+No se ofrecerán reembolsos por servicios completados, salvo que se especifique lo contrario en el contrato correspondiente.
 
-Thank you for using ShipFast!`}
+5. Limitaciones de responsabilidad
+
+5.1. Exclusión de garantías
+CodexiaDDS proporciona sus servicios "tal cual" y no garantiza resultados específicos, salvo los expresamente indicados en los contratos.
+
+5.2. Límites de responsabilidad
+CodexiaDDS no será responsable de:
+- Daños indirectos, incidentales o consecuenciales derivados del uso de nuestros servicios.
+- Pérdida de datos, ingresos o negocios por causas fuera de nuestro control razonable.
+
+6. Terminación
+
+6.1. Por el usuario
+El usuario puede terminar su relación con CodexiaDDS notificándolo por escrito. Las tarifas pendientes seguirán siendo exigibles.
+
+6.2. Por CodexiaDDS
+CodexiaDDS puede suspender o terminar el acceso a los servicios si el usuario incumple estos Términos y Condiciones.
+
+7. Confidencialidad
+CodexiaDDS y el usuario se comprometen a proteger cualquier información confidencial compartida durante la relación comercial.
+
+8. Ley aplicable
+Estos Términos y Condiciones se regirán por las leyes de [país o estado correspondiente]. Cualquier disputa será resuelta en los tribunales competentes de dicha jurisdicción.
+
+9. Cambios a los términos y condiciones
+CodexiaDDS se reserva el derecho de actualizar estos Términos y Condiciones en cualquier momento. Notificaremos a los usuarios sobre cambios significativos a través de nuestro sitio web o por correo electrónico.
+
+10. Contacto
+Para cualquier duda sobre estos Términos y Condiciones, contáctenos en:
+
+- Correo electrónico: contact@codexiadds.com
+- Dirección: [Su dirección física]
+- Teléfono: [Su número de teléfono]
+
+Gracias por elegir a CodexiaDDS. Valoramos su confianza y estamos comprometidos con su éxito.`}
         </pre>
       </div>
     </main>

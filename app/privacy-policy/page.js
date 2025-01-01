@@ -47,61 +47,88 @@ const PrivacyPolicy = () => {
               clipRule="evenodd"
             />
           </svg>{" "}
-          Back
+          Volver
         </Link>
         <h1 className="text-3xl font-extrabold pb-6">
-          Privacy Policy for {config.appName}
+          Políticas de Privacidad de {config.appName}
         </h1>
 
         <pre
           className="leading-relaxed whitespace-pre-wrap"
           style={{ fontFamily: "sans-serif" }}
         >
-          {`Last Updated: 2023-08-25
+          {`Políticas de Privacidad de CodexiaDDS
 
-Thank you for visiting ShipFast ("we," "us," or "our"). This Privacy Policy outlines how we collect, use, and protect your personal and non-personal information when you use our website located at https://shipfa.st (the "Website").
+Fecha de vigencia: ${new Date().toISOString().split('T')[0]}
 
-By accessing or using the Website, you agree to the terms of this Privacy Policy. If you do not agree with the practices described in this policy, please do not use the Website.
+En CodexiaDDS, nos comprometemos a proteger la privacidad y seguridad de la información de nuestros clientes, usuarios y socios comerciales. Estas políticas de privacidad describen cómo recopilamos, utilizamos, compartimos y protegemos la información que obtenemos a través de nuestros servicios de desarrollo web profesional, inteligencia artificial, aprendizaje automático (Machine Learning), desarrollo de aplicaciones y consultoría tecnológica.
 
-1. Information We Collect
+1. Información que recopilamos
 
-1.1 Personal Data
+Recopilamos información de diferentes maneras para ofrecer servicios personalizados y de alta calidad. Esta información incluye:
 
-We collect the following personal information from you:
+1.1. Información proporcionada por el usuario
+- Nombre, dirección de correo electrónico, número de teléfono y otros datos de contacto.
+- Información relacionada con su empresa o proyecto.
+- Datos de pago o facturación.
 
-Name: We collect your name to personalize your experience and communicate with you effectively.
-Email: We collect your email address to send you important information regarding your orders, updates, and communication.
-Payment Information: We collect payment details to process your orders securely. However, we do not store your payment information on our servers. Payments are processed by trusted third-party payment processors.
+1.2. Información recopilada automáticamente
+- Direcciones IP.
+- Datos sobre el uso de nuestros sitios web o aplicaciones.
+- Cookies y tecnologías similares para rastrear el comportamiento del usuario en nuestro sitio web.
 
-1.2 Non-Personal Data
+1.3. Información de terceros
+Podemos recibir información de socios comerciales o proveedores externos, siempre cumpliendo con las leyes aplicables.
 
-We may use web cookies and similar technologies to collect non-personal information such as your IP address, browser type, device information, and browsing patterns. This information helps us to enhance your browsing experience, analyze trends, and improve our services.
+2. Cómo usamos la información
+Utilizamos la información recopilada para:
 
-2. Purpose of Data Collection
+- Proporcionar y mejorar nuestros servicios.
+- Personalizar la experiencia del usuario.
+- Gestionar pagos y facturación.
+- Responder a consultas y proporcionar soporte al cliente.
+- Enviar comunicaciones relacionadas con nuestros servicios, incluidas ofertas y actualizaciones.
+- Cumplir con obligaciones legales y prevenir actividades fraudulentas.
 
-We collect and use your personal data for the sole purpose of order processing. This includes processing your orders, sending order confirmations, providing customer support, and keeping you updated about the status of your orders.
+3. Compartir información
+CodexiaDDS no venderá, alquilará ni compartirá su información personal con terceros para fines comerciales sin su consentimiento, salvo en los siguientes casos:
 
-3. Data Sharing
+- Proveedores de servicios: Compartimos información con terceros que nos ayudan a ofrecer nuestros servicios, como procesadores de pago, servicios de alojamiento web y herramientas de análisis.
+- Cumplimiento legal: Divulgaremos información si es requerido por la ley o para proteger nuestros derechos legales.
+- Fusiones o adquisiciones: En caso de una fusión, adquisición o venta de activos, su información podría transferirse a la nueva entidad.
 
-We do not share your personal data with any third parties except as required for order processing (e.g., sharing your information with payment processors). We do not sell, trade, or rent your personal information to others.
+4. Seguridad de la información
+Utilizamos medidas de seguridad técnicas, administrativas y físicas para proteger su información contra accesos no autorizados, pérdida, robo o alteración. Sin embargo, ningún sistema de transmisión o almacenamiento es completamente seguro.
 
-4. Children's Privacy
+5. Derechos del usuario
 
-ShipFast is not intended for children under the age of 13. We do not knowingly collect personal information from children. If you are a parent or guardian and believe that your child has provided us with personal information, please contact us at the email address provided below.
+Como usuario, usted tiene derecho a:
+- Acceder, actualizar o corregir su información personal.
+- Solicitar la eliminación de sus datos personales, sujeto a las obligaciones legales y contractuales.
+- Optar por no recibir comunicaciones promocionales.
 
-5. Updates to the Privacy Policy
+Para ejercer estos derechos, contáctenos en contact@codexiadds.com.
 
-We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. Any updates will be posted on this page, and we may notify you via email about significant changes.
+6. Uso de cookies y tecnologías similares
+Nuestro sitio web utiliza cookies para mejorar la experiencia del usuario y analizar el rendimiento del sitio. Puede ajustar las configuraciones de cookies en su navegador en cualquier momento.
 
-6. Contact Information
+7. Transferencias internacionales de datos
+CodexiaDDS podría transferir su información a servidores ubicados fuera de su país de residencia. Nos aseguramos de que estas transferencias cumplan con las leyes de protección de datos aplicables.
 
-If you have any questions, concerns, or requests related to this Privacy Policy, you can contact us at:
+8. Políticas de privacidad de terceros
+Nuestra plataforma podría contener enlaces a sitios web o servicios de terceros. No somos responsables de las prácticas de privacidad de estos terceros y recomendamos revisar sus políticas de privacidad.
 
-Email: marc@shipfa.st
+9. Cambios a estas políticas de privacidad
+CodexiaDDS se reserva el derecho de actualizar estas políticas de privacidad en cualquier momento. Notificaremos cualquier cambio significativo a través de nuestro sitio web o por correo electrónico.
 
-For all other inquiries, please visit our Contact Us page on the Website.
+10. Contacto
+Si tiene preguntas o inquietudes sobre nuestras políticas de privacidad, puede contactarnos en:
 
-By using ShipFast, you consent to the terms of this Privacy Policy.`}
+- Correo electrónico: contact@codexiadds.com
+- Dirección: [Su dirección física]
+- Teléfono: [Su número de teléfono]
+
+CodexiaDDS agradece su confianza y se compromete a proteger su información. ¡Gracias por trabajar con nosotros!`}
         </pre>
       </div>
     </main>
