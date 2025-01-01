@@ -81,7 +81,7 @@ const Form = () => {
                   className="w-full px-4 py-3 rounded-lg bg-white/50 border border-purple-500/20 focus:border-purple-500/50 focus:ring-2 focus:ring-purple-500/20 transition-all outline-none"
                   onChange={handleChange}
                   value={formData.email}
-                  placeholder="tu@email.com"
+                  placeholder="@email.com"
                 />
               </div>
 
@@ -90,7 +90,7 @@ const Form = () => {
                   Numero de telefono
                 </label>
                 <input
-                  type="number"
+                  type="text"
                   name="telefono"
                   id="telefono"
                   required
