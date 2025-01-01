@@ -2,7 +2,7 @@ import themes from "daisyui/src/theming/themes";
 
 const config = {
   // REQUIRED
-  appName: "Codexiandds",
+  appName: "Codexiadds",
   // REQUIRED: a short description of your app for SEO tags (can be overwritten)
   appDescription:
     "Somos una empresa de desarrollo de software que se especializa en generar soluciones a problemas complejos para diversas empresas.",
