@@ -25,8 +25,8 @@ const Form = () => {
   };
 
   return (
-    <section id="contact-form" className="relative bg-gradient-to-br from-purple-50/50 to-blue-50/50">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(67,56,202,0.05),rgba(255,255,255,0))]" />
+    <section id="contact-form" className="relative bg-transparent">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(67,56,202,0.03),rgba(255,255,255,0))]" />
       <div className="relative max-w-4xl mx-auto px-8 py-24">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

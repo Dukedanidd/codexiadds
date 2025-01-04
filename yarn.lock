@@ -1885,7 +1885,7 @@ mongodb-connection-string-url@^2.6.0:
     "@types/whatwg-url" "^8.2.1"
     whatwg-url "^11.0.0"
 
-"mongodb@^5 || ^4", mongodb@^5.9.2:
+"mongodb@^5 || ^4", mongodb@^5.9.2, mongodb@5.9.2:
   version "5.9.2"
   resolved "https://registry.npmjs.org/mongodb/-/mongodb-5.9.2.tgz"
   integrity sha512-H60HecKO4Bc+7dhOv4sJlgvenK4fQNqqUIlXxZYQNbfEWSALGAwGoyJd/0Qwk4TttFXUOHJ2ZJQe/52ScaUwtQ==
@@ -1896,25 +1896,14 @@ mongodb-connection-string-url@^2.6.0:
   optionalDependencies:
     "@mongodb-js/saslprep" "^1.1.0"
 
-mongodb@5.9.1:
-  version "5.9.1"
-  resolved "https://registry.npmjs.org/mongodb/-/mongodb-5.9.1.tgz"
-  integrity sha512-NBGA8AfJxGPeB12F73xXwozt8ZpeIPmCUeWRwl9xejozTXFes/3zaep9zhzs1B/nKKsw4P3I4iPfXl3K7s6g+Q==
-  dependencies:
-    bson "^5.5.0"
-    mongodb-connection-string-url "^2.6.0"
-    socks "^2.7.1"
-  optionalDependencies:
-    "@mongodb-js/saslprep" "^1.1.0"
-
-mongoose@^7.6.10:
-  version "7.6.10"
-  resolved "https://registry.npmjs.org/mongoose/-/mongoose-7.6.10.tgz"
-  integrity sha512-vfvGxXwFk6rZVRaMC+8pgXj1uOR2RafZpgaA3fO6ygDJN7dXnBQ3ehuacwaVD+U3hmZetqHimORJhvLEpdRl1w==
+mongoose@^7.8.3:
+  version "7.8.3"
+  resolved "https://registry.npmjs.org/mongoose/-/mongoose-7.8.3.tgz"
+  integrity sha512-eFnbkKgyVrICoHB6tVJ4uLanS7d5AIo/xHkEbQeOv6g2sD7gh/1biRwvFifsmbtkIddQVNr3ROqHik6gkknN3g==
   dependencies:
     bson "^5.5.0"
     kareem "2.5.1"
-    mongodb "5.9.1"
+    mongodb "5.9.2"
     mpath "0.9.0"
     mquery "5.0.0"
     ms "2.1.3"

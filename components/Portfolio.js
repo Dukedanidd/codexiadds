@@ -87,15 +87,15 @@ export default function PortfolioSlider() {
   };
 
   return (
-    <section id="portfolio" className="py-16 px-4 md:px-6 lg:px-8 bg-gradient-to-b from-white to-purple-50">
-      <div className="max-w-6xl mx-auto">
+    <section id="portfolio" className="relative bg-transparent">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
         {/* Título del portafolio con animación */}
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-4xl md:text-5xl font-bold text-center mb-12"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12"
         >
-          <span className="text-purple-800">
+          <span className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
             Nuestro Portafolio
           </span>
         </motion.h2>
@@ -103,7 +103,7 @@ export default function PortfolioSlider() {
         <div className="relative max-w-6xl mx-auto">
           {/* Contenedor principal del carrusel */}
           <div 
-            className="relative overflow-hidden rounded-2xl shadow-xl bg-gradient-to-b from-purple-900 to-purple-800"
+            className="relative overflow-hidden rounded-xl sm:rounded-2xl shadow-xl bg-gradient-to-b from-purple-800 to-purple-900/90"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
@@ -115,7 +115,7 @@ export default function PortfolioSlider() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
-                className="relative aspect-[16/9] md:aspect-[21/9]"
+                className="relative aspect-[4/3] sm:aspect-[16/9] md:aspect-[21/9]"
               >
                 {/* Imagen del slide */}
                 <motion.img
@@ -139,12 +139,12 @@ export default function PortfolioSlider() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="absolute bottom-0 left-0 right-0 p-8 md:p-10"
+                  className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 lg:p-10"
                 >
                   <motion.h3 
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="text-3xl md:text-4xl font-bold mb-4 text-white"
+                    className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-4 text-white"
                   >
                     {projects[currentIndex].title}
                   </motion.h3>
@@ -152,7 +152,7 @@ export default function PortfolioSlider() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.6 }}
-                    className="text-base md:text-lg text-gray-200 max-w-2xl leading-relaxed mb-6"
+                    className="text-sm sm:text-base md:text-lg text-gray-200 max-w-2xl leading-relaxed mb-3 sm:mb-6 line-clamp-2 sm:line-clamp-none"
                   >
                     {projects[currentIndex].description}
                   </motion.p>
@@ -160,7 +160,7 @@ export default function PortfolioSlider() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.8 }}
-                    className="flex flex-wrap gap-3 mb-6"
+                    className="hidden sm:flex flex-wrap gap-2 sm:gap-3 mb-3 sm:mb-6"
                   >
                     {projects[currentIndex].technologies.map((tech, index) => (
                       <span key={index} className="bg-white/20 text-white px-3 py-1 rounded-full text-sm flex items-center gap-1">
@@ -188,7 +188,7 @@ export default function PortfolioSlider() {
           </div>
 
           {/* Puntos de navegación */}
-          <div className="flex justify-center gap-3 mt-6">
+          <div className="flex justify-center gap-2 sm:gap-3 mt-4 sm:mt-6">
             {projects.map((_, index) => (
               <button
                 key={index}

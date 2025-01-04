@@ -111,7 +111,7 @@ const Item = ({ item }) => {
 
 const FAQ = () => {
   return (
-    <section className="bbg-purple-100/30 border-t border-b border-purple-200 border-y-8" id="faq">
+    <section className="bg-transparent" id="faq">
       <div className="py-24 px-8 max-w-7xl mx-auto flex flex-col md:flex-row gap-12">
         <div className="flex flex-col text-left basis-1/2">
           <p className="inline-block font-semibold text-primary mb-4">FAQ</p>

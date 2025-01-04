@@ -82,7 +82,7 @@ const IsometricIllustration = () => {
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-transparent">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(67,56,202,0.05),rgba(255,255,255,0))]" />
       
       <div className="container mx-auto px-4 py-12 flex flex-col lg:flex-row items-center justify-between gap-12">

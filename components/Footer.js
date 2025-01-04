@@ -8,8 +8,8 @@ import logo from "@/app/icon.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-base-200 border-t border-base-content/10">
-      <div className="p-6 bg-gradient-to-br from-primary/10 to-secondary/10 backdrop-blur-sm border-y border-primary/10">
+    <footer className="bg-gradient-to-b from-base-200/80 to-base-200">
+      <div className="p-6 bg-gradient-to-br from-primary/5 to-secondary/5 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-8 py-24">
           <div className="flex lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
             <div className="w-80 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">

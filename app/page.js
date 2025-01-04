@@ -10,11 +10,12 @@ import Footer from "@/components/Footer";
 import SplashScreen from '@/components/SplashScreen';
 import PortfolioCarousel from '@/components/Portfolio';
 import Form from '@/components/Form';
+
 export default function Home() {
   const [showSplash, setShowSplash] = useState(true);
 
   return (
-    <>
+    <main className="bg-gradient-to-b from-white via-purple-50/30 to-base-200/80">
       <AnimatePresence mode="wait">
         {showSplash ? (
           <SplashScreen onComplete={() => setShowSplash(false)} />
@@ -31,13 +32,13 @@ export default function Home() {
               <Hero />
               <About />
               <PortfolioCarousel />
-              <Form />
-              <FAQ />
+                <Form />
+                <FAQ />
             </motion.main>
             <Footer />
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+      </main>
   );
 }
