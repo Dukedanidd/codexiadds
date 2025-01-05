@@ -8,7 +8,6 @@ import About from "@/components/About";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import SplashScreen from '@/components/SplashScreen';
-import PortfolioCarousel from '@/components/Portfolio';
 import Form from '@/components/Form';
 
 export default function Home() {
@@ -31,7 +30,6 @@ export default function Home() {
             <motion.main>
               <Hero />
               <About />
-              <PortfolioCarousel />
                 <Form />
                 <FAQ />
             </motion.main>
