@@ -9,13 +9,13 @@ const features = [
     title: "Desarrollo Web Profesional",
     description: "Creamos soluciones web modernas y escalables utilizando las últimas tecnologías. Nuestro enfoque se centra en crear experiencias digitales excepcionales que impulsan el crecimiento de tu negocio.",
     icon: Code2,
-    stats: ["99% Uptime", "100+ Proyectos", "24/7 Soporte"],
+    stats: ["99% Uptime", "15+ Proyectos", "24/7 Soporte"],
   },
   {
     title: "Inteligencia Artificial y ML",
     description: "Implementamos soluciones avanzadas de IA y Machine Learning para optimizar procesos y proporcionar insights valiosos. Transformamos datos en decisiones inteligentes para el futuro de tu empresa.",
     icon: Brain,
-    stats: ["95% Precisión", "50+ Modelos", "Big Data"],
+    stats: ["95% Precisión", "10+ Modelos", "Big Data"],
   },
   {
     title: "Desarrollo de Aplicaciones",
@@ -27,7 +27,7 @@ const features = [
     title: "Consultoría Tecnológica",
     description: "Ofrecemos asesoramiento experto para ayudarte a tomar las mejores decisiones tecnológicas y optimizar tus procesos. Transformamos desafíos en oportunidades de crecimiento.",
     icon: LineChart,
-    stats: ["ROI 300%", "10+ Industrias", "Personalizado"],
+    stats: ["ROI 300%", "5+ Industrias", "Personalizado"],
   },
 ]
 
