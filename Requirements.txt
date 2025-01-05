@@ -16,3 +16,5 @@ npm install react react-dom
 npm install mongodb
 
 npm install mongoose
+
+npm i @vercel/analytics
