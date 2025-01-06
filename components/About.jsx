@@ -30,8 +30,19 @@ const itemVariants = {
 }
 
 export default function AboutSection() {
-  const { dictionary } = useLanguage();
+  const { dictionary, language } = useLanguage();
   
+  const translations = {
+    en: {
+      title: "About Us",
+      subtitle: "Transforming ideas into innovative technological solutions"
+    },
+    es: {
+      title: "Sobre Nosotros",
+      subtitle: "Transformando ideas en soluciones tecnológicas innovadoras"
+    }
+  };
+
   const features = [
     {
       title: dictionary?.services.webdev.title,
@@ -98,7 +109,7 @@ export default function AboutSection() {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent"
           >
-            Sobre Nosotros
+            {translations[language].title}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -106,7 +117,7 @@ export default function AboutSection() {
             transition={{ delay: 0.2 }}
             className="text-xl text-gray-600 max-w-2xl mx-auto"
           >
-            Transformando ideas en soluciones tecnológicas innovadoras
+            {translations[language].subtitle}
           </motion.p>
           <motion.div
             initial={{ scale: 0 }}
