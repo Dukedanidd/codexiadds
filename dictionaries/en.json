@@ -38,33 +38,40 @@
   },
   "form": {
     "title": "Contact Us",
-    "subtitle": "Ready to boost your project?",
+    "description": "Have a project in mind? Tell us about it and we'll get in touch with you.",
     "fields": {
-      "name": "Name",
+      "firstName": "First Name",
       "lastName": "Last Name",
       "email": "Email",
       "phone": "Phone",
-      "service": "Service of Interest",
+      "service": "Service",
       "message": "Message"
     },
     "placeholders": {
-      "name": "Your name",
+      "firstName": "Your first name",
       "lastName": "Your last name",
       "email": "your@email.com",
       "phone": "Your phone number",
-      "message": "How can we help you?"
+      "service": "Select a service",
+      "message": "Tell us about your project..."
     },
-    "buttons": {
-      "submit": "Send Message",
-      "sending": "Sending..."
-    }
+    "options": {
+      "webDevelopment": "Professional Web Development",
+      "ai": "AI and Machine Learning",
+      "mobile": "App Development",
+      "consulting": "Technology Consulting"
+    },
+    "submit": "Send message",
+    "sending": "Sending...",
+    "success": "Message sent successfully! We'll get back to you soon.",
+    "error": "There was an error sending your message. Please try again."
   },
   "faq": {
     "title": "Frequently Asked Questions",
-    "questions": [
+    "items": [
       {
-        "q": "What services does CodexiaDDS offer?",
-        "a": "We offer software development tailored to your business needs. From basic sites to advanced platforms, we work with you to create the best solution."
+        "question": "What services does CodexiaDDS offer?",
+        "answer": "We offer software development tailored to your business needs. From basic websites to advanced platforms, we work with you to create the best solution."
       },
       {
         "q": "How are project costs calculated?",

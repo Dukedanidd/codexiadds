@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { ArrowRight } from 'lucide-react';
 import { motion } from "framer-motion";
+import { useLanguage } from "@/providers/LanguageContext";
 
 const Form = () => {
+  const { language } = useLanguage();
+    
   const [formData, setFormData] = useState({
     nombre: "",
     apellido: "",
@@ -14,6 +17,66 @@ const Form = () => {
 
   const [loading, setLoading] = useState(false);
   const [notification, setNotification] = useState({ show: false, type: '', message: '' });
+
+  // Objeto de traducciones
+  const translations = {
+    en: {
+      title: "Contact Us",
+      subtitle: "We're here to help. Send us a message!",
+      firstName: "First Name",
+      lastName: "Last Name",
+      phone: "Phone Number",
+      serviceLabel: "How can we help you?",
+      messageLabel: "Message",
+      messagePlaceholder: "How can we help you?",
+      send: "Send Message",
+      sending: "Sending...",
+      success: "Form submitted successfully! 🎉",
+      selectOption: "Select an option",
+      services: {
+        web: "Professional Web Development",
+        ai: "Artificial Intelligence & ML",
+        apps: "App Development",
+        consulting: "Technology Consulting"
+      }
+    },
+    es: {
+      title: "Contáctanos",
+      subtitle: "Estamos aquí para ayudarte. ¡Envíanos un mensaje!",
+      firstName: "Nombre(s)",
+      lastName: "Apellidos",
+      phone: "Número de teléfono",
+      serviceLabel: "¿En qué ámbito podemos ayudarte?",
+      messageLabel: "Mensaje",
+      messagePlaceholder: "¿En qué podemos ayudarte?",
+      send: "Enviar Mensaje",
+      sending: "Enviando...",
+      success: "¡Formulario enviado exitosamente! 🎉",
+      selectOption: "Selecciona una opción",
+      services: {
+        web: "Desarrollo web profesional",
+        ai: "Inteligencia artificial y ML",
+        apps: "Desarrollo de aplicaciones",
+        consulting: "Consulta tecnológica"
+      }
+    }
+  };
+
+  // Definir los valores de los servicios según el idioma
+  const serviceValues = {
+    en: {
+      web: "Professional Web Development",
+      ai: "Artificial Intelligence & ML",
+      apps: "App Development",
+      consulting: "Technology Consulting"
+    },
+    es: {
+      web: "Desarrollo web profesional",
+      ai: "Inteligencia artificial y ML",
+      apps: "Desarrollo de aplicaciones",
+      consulting: "Consulta tecnológica"
+    }
+  };
 
   // Función para mostrar notificación
   const showNotification = (type, message) => {
@@ -71,6 +134,18 @@ const Form = () => {
     });
   };
 
+  // Actualizar el select para usar los valores según el idioma
+  const handleServiceChange = (e) => {
+    const selectedIndex = e.target.selectedIndex;
+    const serviceKeys = Object.keys(serviceValues[language]);
+    const selectedKey = serviceKeys[selectedIndex - 1]; // -1 porque el primer option es el placeholder
+    
+    setFormData({
+      ...formData,
+      service: selectedKey ? serviceValues[language][selectedKey] : ""
+    });
+  };
+
   return (
     <section id="contact-form" className="relative bg-transparent">
       {/* Notificación */}
@@ -106,7 +181,7 @@ const Form = () => {
             transition={{ delay: 0.3 }}
             className="text-4xl font-bold text-center mb-2 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent"
           >
-            Contáctanos
+            {translations[language].title}
           </motion.h2>
           
           <motion.p 
@@ -116,7 +191,7 @@ const Form = () => {
             transition={{ delay: 0.4 }}
             className="text-center text-gray-600 mb-8"
           >
-            Estamos aquí para ayudarte. ¡Envíanos un mensaje!
+            {translations[language].subtitle}
           </motion.p>
 
           <motion.form 
@@ -130,7 +205,7 @@ const Form = () => {
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="nombre" className="block text-sm font-medium text-gray-700 mb-2">
-                  Nombre(s)
+                  {translations[language].firstName}
                 </label>
                 <input
                   type="text"
@@ -140,13 +215,13 @@ const Form = () => {
                   className="w-full px-4 py-3 rounded-lg bg-white/50 border border-purple-500/20 focus:border-purple-500/50 focus:ring-2 focus:ring-purple-500/20 transition-all outline-none"
                   onChange={handleChange}
                   value={formData.nombre}
-                  placeholder="Nombre(s)"
+                  placeholder={translations[language].firstName}
                 />
               </div>
 
               <div>
                 <label htmlFor="apellido" className="block text-sm font-medium text-gray-700 mb-2">
-                  Apellidos
+                  {translations[language].lastName}
                 </label>
                 <input
                   type="text"
@@ -156,7 +231,7 @@ const Form = () => {
                   className="w-full px-4 py-3 rounded-lg bg-white/50 border border-purple-500/20 focus:border-purple-500/50 focus:ring-2 focus:ring-purple-500/20 transition-all outline-none"
                   onChange={handleChange}
                   value={formData.apellido}
-                  placeholder="Apellidos"
+                  placeholder={translations[language].lastName}
                 />
               </div>
 
@@ -178,7 +253,7 @@ const Form = () => {
 
               <div>
                 <label htmlFor="telefono" className="block text-sm font-medium text-gray-700 mb-2">
-                  Numero de telefono
+                  {translations[language].phone}
                 </label>
                 <input
                   type="text"
@@ -195,26 +270,28 @@ const Form = () => {
 
             <div>
               <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
-                ¿En qué ámbito podemos ayudarte?
+                {translations[language].serviceLabel}
               </label>
               <select
                 id="service"
                 name="service"
                 value={formData.service}
-                onChange={(e) => setFormData({...formData, service: e.target.value})}
+                onChange={handleServiceChange}
+                required
                 className="w-full px-4 py-3 rounded-lg bg-white/50 border border-purple-500/20 focus:border-purple-500/50 focus:ring-2 focus:ring-purple-500/20 transition-all outline-none"
               >
-                <option value="">Selecciona una opción</option>
-                <option value="Desarrollo web profesional">Desarrollo web profesional</option>
-                <option value="Inteligencia artificial y ML">Inteligencia artificial y ML</option>
-                <option value="Desarrollo de aplicaciones">Desarrollo de aplicaciones</option>
-                <option value="Consulta tecnológica">Consulta tecnológica</option>
+                <option value="">{translations[language].selectOption}</option>
+                {Object.values(serviceValues[language]).map((service) => (
+                  <option key={service} value={service}>
+                    {service}
+                  </option>
+                ))}
               </select>
             </div>
 
             <div>
               <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                Mensaje
+                {translations[language].messageLabel}
               </label>
               <textarea
                 name="message"
@@ -224,7 +301,7 @@ const Form = () => {
                 className="w-full px-4 py-3 rounded-lg bg-white/50 border border-purple-500/20 focus:border-purple-500/50 focus:ring-2 focus:ring-purple-500/20 transition-all outline-none resize-none"
                 onChange={handleChange}
                 value={formData.message}
-                placeholder="¿En qué podemos ayudarte?"
+                placeholder={translations[language].messagePlaceholder}
               ></textarea>
             </div>
 
@@ -236,7 +313,7 @@ const Form = () => {
                   loading ? 'opacity-70 cursor-not-allowed' : ''
                 }`}
               >
-                {loading ? 'Enviando...' : 'Enviar Mensaje'}
+                {loading ? translations[language].sending : translations[language].send}
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </button>
             </div>

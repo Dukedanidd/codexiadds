@@ -38,33 +38,40 @@
   },
   "form": {
     "title": "Contáctanos",
-    "subtitle": "¿Listo para impulsar tu proyecto?",
+    "description": "¿Tienes un proyecto en mente? Cuéntanos sobre él y nos pondremos en contacto contigo.",
     "fields": {
-      "name": "Nombre",
+      "firstName": "Nombre",
       "lastName": "Apellido",
       "email": "Correo electrónico",
       "phone": "Teléfono",
-      "service": "Servicio de interés",
+      "service": "Servicio",
       "message": "Mensaje"
     },
     "placeholders": {
-      "name": "Tu nombre",
+      "firstName": "Tu nombre",
       "lastName": "Tu apellido",
       "email": "tu@email.com",
       "phone": "Tu número de teléfono",
-      "message": "¿En qué podemos ayudarte?"
+      "service": "Selecciona un servicio",
+      "message": "Cuéntanos sobre tu proyecto..."
     },
-    "buttons": {
-      "submit": "Enviar Mensaje",
-      "sending": "Enviando..."
-    }
+    "options": {
+      "webDevelopment": "Desarrollo web profesional",
+      "ai": "Inteligencia artificial y ML",
+      "mobile": "Desarrollo de aplicaciones",
+      "consulting": "Consulta tecnológica"
+    },
+    "submit": "Enviar mensaje",
+    "sending": "Enviando...",
+    "success": "¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.",
+    "error": "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo."
   },
   "faq": {
     "title": "Preguntas Frecuentes",
-    "questions": [
+    "items": [
       {
-        "q": "¿Qué servicios ofrece CodexiaDDS?",
-        "a": "Ofrecemos desarrollo de software adaptado a las necesidades de tu negocio. Desde sitios básicos hasta plataformas avanzadas, trabajamos contigo para crear la mejor solución."
+        "question": "¿Qué servicios ofrece CodexiaDDS?",
+        "answer": "Ofrecemos desarrollo de software adaptado a las necesidades de tu negocio. Desde sitios básicos hasta plataformas avanzadas, trabajamos contigo para crear la mejor solución."
       },
       {
         "q": "¿Cómo se calculan los costos de los proyectos?",
