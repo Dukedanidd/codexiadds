@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { ArrowRight } from 'lucide-react'
+import { useLanguage } from "@/providers/LanguageContext"
 
 const IsometricIllustration = () => {
   return (
@@ -81,6 +82,23 @@ const IsometricIllustration = () => {
 }
 
 const Hero = () => {
+  const { language } = useLanguage();
+
+  const translations = {
+    en: {
+      title: "Technological Solutions",
+      subtitle: "for the Digital Future",
+      description: "We transform ideas into innovative digital solutions. We develop custom software that drives your business growth.",
+      contactButton: "Contact Us"
+    },
+    es: {
+      title: "Soluciones Tecnológicas",
+      subtitle: "para el Futuro Digital",
+      description: "Transformamos ideas en soluciones digitales innovadoras. Desarrollamos software personalizado que impulsa el crecimiento de tu negocio.",
+      contactButton: "Contáctanos"
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-transparent">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(67,56,202,0.05),rgba(255,255,255,0))]" />
@@ -93,15 +111,14 @@ const Hero = () => {
           className="flex-1 text-center lg:text-left z-10"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            <span className="block text-gray-900 mb-2">Soluciones Tecnológicas</span>
+            <span className="block text-gray-900 mb-2">{translations[language].title}</span>
             <span className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-              para el Futuro Digital
+              {translations[language].subtitle}
             </span>
           </h1>
 
           <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">
-            Transformamos ideas en soluciones digitales innovadoras. Desarrollamos software 
-            personalizado que impulsa el crecimiento de tu negocio.
+            {translations[language].description}
           </p>
 
           <button 
@@ -113,7 +130,7 @@ const Hero = () => {
             }}
             className="group bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 flex items-center gap-2 mx-auto lg:mx-0"
           >
-            Contactanos
+            {translations[language].contactButton}
             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
           </button>
         </motion.div>
