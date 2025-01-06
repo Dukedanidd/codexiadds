@@ -11,29 +11,11 @@ import ConstructionModal from "./ConstructionModal";
 import { useLanguage } from "@/providers/LanguageContext";
 import { Globe } from 'lucide-react';
 
-const links = [
-  {
-    href: "/#about",
-    label: "Sobre Nosotros",
-  },
-  {
-    href: "/#portfolio",
-    label: "Portafolio",
-    showModal: true,
-  },
-  {
-    href: "/#faq",
-    label: "FAQ",
-  },
-];
-
-// A header with a logo on the left, links in the center (like Pricing, etc...), and a CTA (like Get Started or Login) on the right.
-// The header is responsive, and on mobile, the links are hidden behind a burger button.
 const Header = () => {
   const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState(false);
   const [showConstructionModal, setShowConstructionModal] = useState(false);
-  const { language, toggleLanguage } = useLanguage();
+  const { dictionary, language, toggleLanguage } = useLanguage();
 
   // setIsOpen(false) when the route changes (i.e: when the user clicks on a link on mobile)
   useEffect(() => {
@@ -47,6 +29,24 @@ const Header = () => {
     }
   };
 
+  const links = [
+    {
+      href: "/#about",
+      label: dictionary?.navigation.about,
+    },
+    {
+      href: "/#portfolio",
+      label: dictionary?.navigation.portfolio,
+      showModal: true,
+    },
+    {
+      href: "/#faq",
+      label: dictionary?.navigation.faq,
+    },
+  ];
+
+  // A header with a logo on the left, links in the center (like Pricing, etc...), and a CTA (like Get Started or Login) on the right.
+  // The header is responsive, and on mobile, the links are hidden behind a burger button.
   return (
     <>
       <header className="bg-white relative">

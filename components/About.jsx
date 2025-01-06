@@ -3,71 +3,62 @@
 import { motion, useScroll, useTransform } from "framer-motion"
 import { Code2, Brain, Rocket, LineChart, Sparkles } from 'lucide-react'
 import { useRef } from "react"
+import { useLanguage } from "@/providers/LanguageContext"
 
-const features = [
-  {
-    title: "Desarrollo Web Profesional",
-    description: "Creamos soluciones web modernas y escalables utilizando las últimas tecnologías. Nuestro enfoque se centra en crear experiencias digitales excepcionales que impulsan el crecimiento de tu negocio.",
-    icon: Code2,
-    stats: ["99% Uptime", "15+ Proyectos", "24/7 Soporte"],
-  },
-  {
-    title: "Inteligencia Artificial y ML",
-    description: "Implementamos soluciones avanzadas de IA y Machine Learning para optimizar procesos y proporcionar insights valiosos. Transformamos datos en decisiones inteligentes para el futuro de tu empresa.",
-    icon: Brain,
-    stats: ["95% Precisión", "10+ Modelos", "Big Data"],
-  },
-  {
-    title: "Desarrollo de Aplicaciones",
-    description: "Desarrollamos aplicaciones nativas y multiplataforma que destacan por su rendimiento y experiencia de usuario. Creamos soluciones móviles que conectan con tu audiencia.",
-    icon: Rocket,
-    stats: ["iOS & Android", "PWA Ready", "UX Centrado"],
-  },
-  {
-    title: "Consultoría Tecnológica",
-    description: "Ofrecemos asesoramiento experto para ayudarte a tomar las mejores decisiones tecnológicas y optimizar tus procesos. Transformamos desafíos en oportunidades de crecimiento.",
-    icon: LineChart,
-    stats: ["ROI 300%", "5+ Industrias", "Personalizado"],
-  },
-]
-
+// Definir las variantes de animación
 const containerVariants = {
-  hidden: { opacity: 0 },
+  hidden: {},
   visible: {
-    opacity: 1,
     transition: {
-      staggerChildren: 0.3,
-    },
-  },
+      staggerChildren: 0.3
+    }
+  }
 }
 
 const itemVariants = {
-  hidden: { 
-    opacity: 0, 
-    y: 50,
-    scale: 0.9
+  hidden: {
+    opacity: 0,
+    y: 20
   },
   visible: {
     opacity: 1,
     y: 0,
-    scale: 1,
     transition: {
-      type: "spring",
-      stiffness: 100,
-      duration: 0.8
-    },
-  },
-  exit: {
-    opacity: 0,
-    y: 50,
-    scale: 0.9,
-    transition: {
-      duration: 0.3,
+      duration: 0.5
     }
   }
 }
 
 export default function AboutSection() {
+  const { dictionary } = useLanguage();
+  
+  const features = [
+    {
+      title: dictionary?.services.webdev.title,
+      description: dictionary?.services.webdev.description,
+      icon: Code2,
+      stats: dictionary?.services.webdev.stats,
+    },
+    {
+      title: dictionary?.services.ai.title,
+      description: dictionary?.services.ai.description,
+      icon: Brain,
+      stats: dictionary?.services.ai.stats,
+    },
+    {
+      title: dictionary?.services.mobile.title,
+      description: dictionary?.services.mobile.description,
+      icon: Rocket,
+      stats: dictionary?.services.mobile.stats,
+    },
+    {
+      title: dictionary?.services.consulting.title,
+      description: dictionary?.services.consulting.description,
+      icon: LineChart,
+      stats: dictionary?.services.consulting.stats,
+    },
+  ]
+
   const containerRef = useRef(null)
   const { scrollYProgress } = useScroll({
     target: containerRef,
