@@ -8,6 +8,8 @@ import logo from "@/app/icon.png";
 import config from "@/config";
 import { motion } from "framer-motion";
 import ConstructionModal from "./ConstructionModal";
+import { useLanguage } from "@/providers/LanguageContext";
+import { Globe } from 'lucide-react';
 
 const links = [
   {
@@ -31,6 +33,7 @@ const Header = () => {
   const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState(false);
   const [showConstructionModal, setShowConstructionModal] = useState(false);
+  const { language, toggleLanguage } = useLanguage();
 
   // setIsOpen(false) when the route changes (i.e: when the user clicks on a link on mobile)
   useEffect(() => {
@@ -101,6 +104,18 @@ const Header = () => {
                 </Link>
               </motion.div>
             ))}
+            
+            {/* Botón de idioma */}
+            <motion.button
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              onClick={toggleLanguage}
+              className="flex items-center gap-2 px-3 py-1 rounded-full border border-gray-300 hover:border-purple-500 transition-colors"
+            >
+              <Globe className="w-4 h-4" />
+              <span className="uppercase">{language}</span>
+            </motion.button>
           </div>
 
           {/* Burger button con nuevo estilo */}
@@ -195,6 +210,17 @@ const Header = () => {
                   ))}
                 </div>
               </div>
+            </div>
+
+            {/* Añadir el botón de idioma también en el menú móvil */}
+            <div className="py-4 mt-4">
+              <button
+                onClick={toggleLanguage}
+                className="flex items-center gap-2 px-3 py-1 rounded-full border border-gray-300 hover:border-purple-500 transition-colors"
+              >
+                <Globe className="w-4 h-4" />
+                <span className="uppercase">{language}</span>
+              </button>
             </div>
           </motion.div>
         </div>

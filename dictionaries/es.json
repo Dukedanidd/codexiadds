@@ -1,0 +1,98 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "about": "Sobre Nosotros",
+    "services": "Servicios",
+    "contact": "Contacto",
+    "portfolio": "Portafolio",
+    "faq": "Preguntas Frecuentes"
+  },
+  "hero": {
+    "title": "Soluciones Tecnológicas",
+    "subtitle": "para el Futuro Digital",
+    "description": "Transformamos ideas en soluciones digitales innovadoras. Desarrollamos software personalizado que impulsa el crecimiento de tu negocio.",
+    "cta": "Contáctanos"
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "webdev": {
+      "title": "Desarrollo Web Profesional",
+      "description": "Creamos soluciones web modernas y escalables utilizando las últimas tecnologías.",
+      "stats": ["99% Uptime", "15+ Proyectos", "24/7 Soporte"]
+    },
+    "ai": {
+      "title": "Inteligencia Artificial y ML",
+      "description": "Implementamos soluciones avanzadas de IA y Machine Learning para optimizar procesos.",
+      "stats": ["95% Precisión", "10+ Modelos", "Big Data"]
+    },
+    "mobile": {
+      "title": "Desarrollo de Aplicaciones",
+      "description": "Desarrollamos aplicaciones nativas y multiplataforma que destacan por su rendimiento.",
+      "stats": ["iOS & Android", "PWA Ready", "UX Centrado"]
+    },
+    "consulting": {
+      "title": "Consultoría Tecnológica",
+      "description": "Ofrecemos asesoramiento experto para optimizar tus procesos tecnológicos.",
+      "stats": ["ROI 300%", "5+ Industrias", "Personalizado"]
+    }
+  },
+  "form": {
+    "title": "Contáctanos",
+    "subtitle": "¿Listo para impulsar tu proyecto?",
+    "fields": {
+      "name": "Nombre",
+      "lastName": "Apellido",
+      "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "service": "Servicio de interés",
+      "message": "Mensaje"
+    },
+    "placeholders": {
+      "name": "Tu nombre",
+      "lastName": "Tu apellido",
+      "email": "tu@email.com",
+      "phone": "Tu número de teléfono",
+      "message": "¿En qué podemos ayudarte?"
+    },
+    "buttons": {
+      "submit": "Enviar Mensaje",
+      "sending": "Enviando..."
+    }
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "questions": [
+      {
+        "q": "¿Qué servicios ofrece CodexiaDDS?",
+        "a": "Ofrecemos desarrollo de software adaptado a las necesidades de tu negocio. Desde sitios básicos hasta plataformas avanzadas, trabajamos contigo para crear la mejor solución."
+      },
+      {
+        "q": "¿Cómo se calculan los costos de los proyectos?",
+        "a": "El costo depende de la complejidad del proyecto, las funciones necesarias y el tiempo estimado. Ofrecemos presupuestos personalizados después de una consulta inicial."
+      },
+      {
+        "q": "¿Cómo es el proceso de desarrollo?",
+        "a": "Nuestro proceso incluye: consulta inicial, diseño y planificación, desarrollo y pruebas, y entrega final con soporte post-lanzamiento."
+      },
+      {
+        "q": "¿Ofrecen soporte y mantenimiento?",
+        "a": "Sí, brindamos soporte técnico y opciones de mantenimiento para asegurar el funcionamiento óptimo de tu sitio después del lanzamiento."
+      }
+    ]
+  },
+  "footer": {
+    "company": "Empresa",
+    "about": "Sobre Nosotros",
+    "services": "Servicios",
+    "contact": "Contacto",
+    "legal": "Legal",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "rights": "© 2024 CodexiaDDS. Todos los derechos reservados."
+  },
+  "construction": {
+    "title": "¡En Construcción!",
+    "message": "Estamos trabajando arduamente para traerte un portafolio increíble. ¡Vuelve pronto!",
+    "button": "Entendido"
+  }
+} 
