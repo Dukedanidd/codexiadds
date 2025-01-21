@@ -6,6 +6,8 @@ import config from "@/config";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react"
 import { LanguageProvider } from "@/providers/LanguageContext";
+import { ThemeProvider } from "@/providers/ThemeContext";
+
 
 const font = Inter({ subsets: ["latin"] });
 
@@ -22,17 +24,21 @@ export const metadata = getSEOTags();
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-theme={config.colors.theme} className={font.className}>
+    <html lang="en" className={font.className}>
       {config.domainName && (
         <head>
           <PlausibleProvider domain={config.domainName} />
         </head>
       )}
-      <body>
-        <LanguageProvider>
-          <ClientLayout>{children}</ClientLayout>
-          <Analytics />
-        </LanguageProvider>
+       <body className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+        <ThemeProvider>
+          <LanguageProvider>
+            <ClientLayout>
+              {children}
+              <Analytics />
+            </ClientLayout>
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

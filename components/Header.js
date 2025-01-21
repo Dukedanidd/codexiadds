@@ -10,12 +10,15 @@ import { motion } from "framer-motion";
 import ConstructionModal from "./ConstructionModal";
 import { useLanguage } from "@/providers/LanguageContext";
 import { Globe } from 'lucide-react';
+import { Moon, Sun } from 'lucide-react';
+import { useTheme } from "@/providers/ThemeContext";
 
 const Header = () => {
   const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState(false);
   const [showConstructionModal, setShowConstructionModal] = useState(false);
   const { dictionary, language, toggleLanguage } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
 
   // setIsOpen(false) when the route changes (i.e: when the user clicks on a link on mobile)
   useEffect(() => {
@@ -47,17 +50,16 @@ const Header = () => {
 
   // A header with a logo on the left, links in the center (like Pricing, etc...), and a CTA (like Get Started or Login) on the right.
   // The header is responsive, and on mobile, the links are hidden behind a burger button.
+  // ... existing code ...
+
   return (
     <>
-      <header className="bg-white relative">
-        {/* Añadimos el mismo fondo con gradiente radial */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(67,56,202,0.05),rgba(255,255,255,0))]" />
-        
-        <nav
-          className="container flex items-center justify-between px-8 py-4 mx-auto relative z-10"
-          aria-label="Global"
-        >
-          {/* Logo con animación */}
+      <header className="bg-white dark:bg-gray-900 relative">
+        {/* Fondo con gradiente radial */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(67,56,202,0.05),rgba(255,255,255,0))] dark:bg-[radial-gradient(circle_at_center,rgba(67,56,202,0.03),rgba(0,0,0,0))]" />
+
+        <nav className="container flex items-center justify-between px-8 py-4 mx-auto relative z-10">
+          {/* ... Logo existente ... */}
           <div className="flex lg:flex-1">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -72,7 +74,7 @@ const Header = () => {
                 <Image
                   src={logo}
                   alt={`${config.appName} logo`}
-                  className="w-8"
+                  className="w-8 dark:invert" // Añade dark:invert si tu logo es oscuro
                   placeholder="blur"
                   priority={true}
                   width={32}
@@ -84,7 +86,6 @@ const Header = () => {
               </Link>
             </motion.div>
           </div>
-
           {/* Links con animación */}
           <div className="hidden lg:flex lg:justify-center lg:gap-12 lg:items-center">
             {links.map((link, index) => (
@@ -96,7 +97,7 @@ const Header = () => {
               >
                 <Link
                   href={link.href}
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                  className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors"
                   title={link.label}
                   onClick={(e) => handleLinkClick(e, link)}
                 >
@@ -104,25 +105,41 @@ const Header = () => {
                 </Link>
               </motion.div>
             ))}
-            
+
+
+            {/* Botón de tema - Añadir antes del botón de idioma */}
+            <motion.button
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              onClick={toggleTheme}
+              className="flex items-center gap-2 px-3 py-1 rounded-full border border-gray-300 dark:border-gray-600 hover:border-purple-500 dark:hover:border-purple-400 transition-colors"
+            >
+              {theme === 'light' ? (
+                <Moon className="w-4 h-4 text-gray-600 dark:text-gray-300" />
+              ) : (
+                <Sun className="w-4 h-4 text-gray-600 dark:text-gray-300" />
+              )}
+            </motion.button>
+
             {/* Botón de idioma */}
             <motion.button
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
               onClick={toggleLanguage}
-              className="flex items-center gap-2 px-3 py-1 rounded-full border border-gray-300 hover:border-purple-500 transition-colors"
+              className="flex items-center gap-2 px-3 py-1 rounded-full border border-gray-300 dark:border-gray-600 hover:border-purple-500 dark:hover:border-purple-400 transition-colors"
             >
-              <Globe className="w-4 h-4" />
-              <span className="uppercase">{language}</span>
+              <Globe className="w-4 h-4 text-gray-600 dark:text-gray-300" />
+              <span className="uppercase text-gray-600 dark:text-gray-300">{language}</span>
             </motion.button>
           </div>
 
-          {/* Burger button con nuevo estilo */}
+          {/* Burger button */}
           <div className="flex lg:hidden">
             <button
               type="button"
-              className="p-2 rounded-full bg-gradient-to-r from-purple-500/10 to-blue-500/10"
+              className="p-2 rounded-full bg-gradient-to-r from-purple-500/10 to-blue-500/10 dark:from-purple-500/5 dark:to-blue-500/5"
               onClick={() => setIsOpen(true)}
             >
               <span className="sr-only">Open main menu</span>
@@ -132,7 +149,7 @@ const Header = () => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-6 h-6 text-gray-900"
+                className="w-6 h-6 text-gray-900 dark:text-gray-100"
               >
                 <path
                   strokeLinecap="round"
@@ -144,91 +161,44 @@ const Header = () => {
           </div>
         </nav>
 
-        {/* Mobile menu con nuevo estilo */}
+        {/* Mobile menu */}
         <div className={`relative z-50 ${isOpen ? "" : "hidden"}`}>
           <motion.div
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
-            className="fixed inset-y-0 right-0 z-10 w-full px-8 py-4 overflow-y-auto bg-white/90 backdrop-blur-xl sm:max-w-sm"
+            className="fixed inset-y-0 right-0 z-10 w-full px-8 py-4 overflow-y-auto bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl sm:max-w-sm"
           >
-            {/* Your logo/name on small screens */}
-            <div className="flex items-center justify-between">
-              <Link
-                className="flex items-center gap-2 shrink-0 "
-                title={`${config.appName} hompage`}
-                href="/"
-              >
-                <Image
-                  src={logo}
-                  alt={`${config.appName} logo`}
-                  className="w-8"
-                  placeholder="blur"
-                  priority={true}
-                  width={32}
-                  height={32}
-                />
-                <span className="font-extrabold text-lg">{config.appName}</span>
-              </Link>
+            {/* ... Contenido del menú móvil ... */}
+
+            {/* Añadir botones de tema e idioma en el menú móvil */}
+            <div className="py-4 mt-4 flex flex-col gap-4">
               <button
-                type="button"
-                className="-m-2.5 rounded-md p-2.5"
-                onClick={() => setIsOpen(false)}
+                onClick={toggleTheme}
+                className="flex items-center gap-2 px-3 py-1 rounded-full border border-gray-300 dark:border-gray-600 hover:border-purple-500 dark:hover:border-purple-400 transition-colors"
               >
-                <span className="sr-only">Close menu</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
+                {theme === 'light' ? (
+                  <Moon className="w-4 h-4 text-gray-600 dark:text-gray-300" />
+                ) : (
+                  <Sun className="w-4 h-4 text-gray-600 dark:text-gray-300" />
+                )}
               </button>
-            </div>
 
-            {/* Your links on small screens */}
-            <div className="flow-root mt-6">
-              <div className="py-4">
-                <div className="flex flex-col gap-y-4 items-start">
-                  {links.map((link) => (
-                    <Link
-                      href={link.href}
-                      key={link.href}
-                      className="link link-hover"
-                      title={link.label}
-                      onClick={(e) => handleLinkClick(e, link)}
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Añadir el botón de idioma también en el menú móvil */}
-            <div className="py-4 mt-4">
               <button
                 onClick={toggleLanguage}
-                className="flex items-center gap-2 px-3 py-1 rounded-full border border-gray-300 hover:border-purple-500 transition-colors"
+                className="flex items-center gap-2 px-3 py-1 rounded-full border border-gray-300 dark:border-gray-600 hover:border-purple-500 dark:hover:border-purple-400 transition-colors"
               >
-                <Globe className="w-4 h-4" />
-                <span className="uppercase">{language}</span>
+                <Globe className="w-4 h-4 text-gray-600 dark:text-gray-300" />
+                <span className="uppercase text-gray-600 dark:text-gray-300">{language}</span>
               </button>
             </div>
           </motion.div>
         </div>
       </header>
 
-      <ConstructionModal 
-        isOpen={showConstructionModal} 
-        onClose={() => setShowConstructionModal(false)} 
+      <ConstructionModal
+        isOpen={showConstructionModal}
+        onClose={() => setShowConstructionModal(false)}
       />
     </>
   );

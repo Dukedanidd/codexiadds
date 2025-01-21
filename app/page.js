@@ -14,7 +14,7 @@ export default function Home() {
   const [showSplash, setShowSplash] = useState(true);
 
   return (
-    <main className="bg-gradient-to-b from-white via-purple-50/30 to-base-200/80">
+    <main className="bg-gradient-to-b from-white via-purple-50/30 to-base-200/80 dark:from-gray-900 dark:via-purple-900/10 dark:to-gray-900/80">
       <AnimatePresence mode="wait">
         {showSplash ? (
           <SplashScreen onComplete={() => setShowSplash(false)} />
@@ -30,13 +30,13 @@ export default function Home() {
             <motion.main>
               <Hero />
               <About />
-                <Form />
-                <FAQ />
+              <Form />
+              <FAQ />
             </motion.main>
             <Footer />
           </motion.div>
         )}
       </AnimatePresence>
-      </main>
+    </main>
   );
 }

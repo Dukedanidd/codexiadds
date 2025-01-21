@@ -80,9 +80,9 @@ export default function AboutSection() {
   const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8])
 
   return (
-    <section id='about' className="py-20 px-4 relative min-h-screen bg-transparent" ref={containerRef}>
+    <section id='about' className="py-20 px-4 relative min-h-screen bg-transparent dark:bg-gray-900" ref={containerRef}>
       {/* Fondo con patrón minimalista */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+      <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none">
         <div className="absolute inset-0 grid grid-cols-6 gap-4">
           {[...Array(24)].map((_, i) => (
             <div
@@ -115,7 +115,7 @@ export default function AboutSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-gray-600 max-w-2xl mx-auto"
+            className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
           >
             {translations[language].subtitle}
           </motion.p>
@@ -160,9 +160,9 @@ export default function AboutSection() {
               >
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className={`relative p-8 bg-white/80 backdrop-blur-sm rounded-xl 
+                  className={`relative p-8 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl 
                   shadow-lg transition-all duration-500 group hover:shadow-2xl 
-                  border border-gray-100
+                  border border-gray-100 dark:border-gray-700
                   lg:w-[calc(50%-40px)] w-full max-w-xl
                   ${index % 2 === 0 ? "lg:mr-auto" : "lg:ml-auto"}`}
                 >
@@ -184,15 +184,15 @@ export default function AboutSection() {
                   />
 
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="p-3 rounded-lg bg-gradient-to-br from-purple-500/10 to-blue-500/10 group-hover:from-purple-500/20 group-hover:to-blue-500/20 transition-colors duration-500">
-                      <Icon className="w-8 h-8 text-purple-600 group-hover:text-blue-600 transition-colors duration-500" />
+                    <div className="p-3 rounded-lg bg-gradient-to-br from-purple-500/10 to-blue-500/10 dark:from-purple-500/20 dark:to-blue-500/20 group-hover:from-purple-500/20 group-hover:to-blue-500/20 dark:group-hover:from-purple-500/30 dark:group-hover:to-blue-500/30 transition-colors duration-500">
+                      <Icon className="w-8 h-8 text-purple-600 dark:text-purple-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-500" />
                     </div>
                     <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
                       {feature.title}
                     </h3>
                   </div>
 
-                  <p className="text-gray-600 text-lg leading-relaxed mb-6 group-hover:text-gray-700">
+                  <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-6 group-hover:text-gray-700 dark:group-hover:text-gray-200">
                     {feature.description}
                   </p>
 
@@ -204,9 +204,9 @@ export default function AboutSection() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: i * 0.1 }}
-                        className="text-center p-2 rounded-lg bg-gradient-to-br from-purple-50 to-blue-50 group-hover:from-purple-100 group-hover:to-blue-100 transition-colors duration-500"
+                        className="text-center p-2 rounded-lg bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-900/30 dark:to-blue-900/30 group-hover:from-purple-100 group-hover:to-blue-100 dark:group-hover:from-purple-900/50 dark:group-hover:to-blue-900/50 transition-colors duration-500"
                       >
-                        <span className="text-sm font-medium text-gray-800">
+                        <span className="text-sm font-medium text-gray-800 dark:text-gray-200">
                           {stat}
                         </span>
                       </motion.div>

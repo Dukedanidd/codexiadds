@@ -1,11 +1,14 @@
+"use client"
+
 import { useState } from "react";
-import { ArrowRight } from 'lucide-react';
 import { motion } from "framer-motion";
 import { useLanguage } from "@/providers/LanguageContext";
+import { ArrowRight } from 'lucide-react';
 
 const Form = () => {
   const { language } = useLanguage();
-    
+  const [loading, setLoading] = useState(false);
+  const [notification, setNotification] = useState({ show: false, type: '', message: '' });
   const [formData, setFormData] = useState({
     nombre: "",
     apellido: "",
@@ -15,10 +18,6 @@ const Form = () => {
     service: ""
   });
 
-  const [loading, setLoading] = useState(false);
-  const [notification, setNotification] = useState({ show: false, type: '', message: '' });
-
-  // Objeto de traducciones
   const translations = {
     en: {
       title: "Contact Us",
@@ -62,7 +61,6 @@ const Form = () => {
     }
   };
 
-  // Definir los valores de los servicios según el idioma
   const serviceValues = {
     en: {
       web: "Professional Web Development",
@@ -78,10 +76,8 @@ const Form = () => {
     }
   };
 
-  // Función para mostrar notificación
   const showNotification = (type, message) => {
     setNotification({ show: true, type, message });
-    // Ocultar la notificación después de 5 segundos
     setTimeout(() => {
       setNotification({ show: false, type: '', message: '' });
     }, 5000);
@@ -106,10 +102,8 @@ const Form = () => {
         throw new Error(data.error || 'Error al enviar el formulario');
       }
 
-      // Mostrar notificación de éxito
-      showNotification('success', '¡Formulario enviado exitosamente! 🎉');
+      showNotification('success', translations[language].success);
       
-      // Limpiar el formulario
       setFormData({
         nombre: "",
         apellido: "",
@@ -120,7 +114,6 @@ const Form = () => {
       });
       
     } catch (err) {
-      // Mostrar notificación de error
       showNotification('error', `Error: ${err.message}`);
     } finally {
       setLoading(false);
@@ -134,11 +127,10 @@ const Form = () => {
     });
   };
 
-  // Actualizar el select para usar los valores según el idioma
   const handleServiceChange = (e) => {
     const selectedIndex = e.target.selectedIndex;
     const serviceKeys = Object.keys(serviceValues[language]);
-    const selectedKey = serviceKeys[selectedIndex - 1]; // -1 porque el primer option es el placeholder
+    const selectedKey = serviceKeys[selectedIndex - 1];
     
     setFormData({
       ...formData,
@@ -148,13 +140,12 @@ const Form = () => {
 
   return (
     <section id="contact-form" className="relative bg-transparent">
-      {/* Notificación */}
       {notification.show && (
         <div
           className={`fixed bottom-4 right-4 p-4 rounded-lg shadow-lg transition-all duration-500 transform ${
             notification.type === 'success' 
-              ? 'bg-green-500 text-white' 
-              : 'bg-red-500 text-white'
+              ? 'bg-green-500 text-white dark:bg-green-600' 
+              : 'bg-red-500 text-white dark:bg-red-600'
           }`}
           style={{
             zIndex: 1000,
@@ -165,16 +156,16 @@ const Form = () => {
         </div>
       )}
 
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(67,56,202,0.03),rgba(255,255,255,0))]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(67,56,202,0.03),rgba(255,255,255,0))] dark:bg-[radial-gradient(circle_at_center,rgba(67,56,202,0.03),rgba(0,0,0,0))]" />
       <div className="relative max-w-4xl mx-auto px-8 py-24">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="p-8 rounded-2xl bg-white/80 backdrop-blur-sm border border-purple-500/10 shadow-xl shadow-purple-500/5"
+          className="p-8 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-purple-500/10 shadow-xl shadow-purple-500/5"
         >
-          <motion.h2 
+                    <motion.h2 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -189,7 +180,7 @@ const Form = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="text-center text-gray-600 mb-8"
+            className="text-center text-gray-600 dark:text-gray-300 mb-8"
           >
             {translations[language].subtitle}
           </motion.p>
@@ -202,9 +193,9 @@ const Form = () => {
             onSubmit={handleSubmit} 
             className="space-y-6"
           >
-            <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="nombre" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="nombre" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   {translations[language].firstName}
                 </label>
                 <input
@@ -212,7 +203,7 @@ const Form = () => {
                   name="nombre"
                   id="nombre"
                   required
-                  className="w-full px-4 py-3 rounded-lg bg-white/50 border border-purple-500/20 focus:border-purple-500/50 focus:ring-2 focus:ring-purple-500/20 transition-all outline-none"
+                  className="w-full px-4 py-3 rounded-lg bg-white/50 dark:bg-gray-700/50 border border-purple-500/20 focus:border-purple-500/50 focus:ring-2 focus:ring-purple-500/20 transition-all outline-none dark:text-white"
                   onChange={handleChange}
                   value={formData.nombre}
                   placeholder={translations[language].firstName}
@@ -220,7 +211,7 @@ const Form = () => {
               </div>
 
               <div>
-                <label htmlFor="apellido" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="apellido" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   {translations[language].lastName}
                 </label>
                 <input
@@ -228,23 +219,22 @@ const Form = () => {
                   name="apellido"
                   id="apellido"
                   required
-                  className="w-full px-4 py-3 rounded-lg bg-white/50 border border-purple-500/20 focus:border-purple-500/50 focus:ring-2 focus:ring-purple-500/20 transition-all outline-none"
+                  className="w-full px-4 py-3 rounded-lg bg-white/50 dark:bg-gray-700/50 border border-purple-500/20 focus:border-purple-500/50 focus:ring-2 focus:ring-purple-500/20 transition-all outline-none dark:text-white"
                   onChange={handleChange}
                   value={formData.apellido}
                   placeholder={translations[language].lastName}
                 />
               </div>
-
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Email
                 </label>
                 <input
-                  type="text"
+                  type="email"
                   name="email"
                   id="email"
                   required
-                  className="w-full px-4 py-3 rounded-lg bg-white/50 border border-purple-500/20 focus:border-purple-500/50 focus:ring-2 focus:ring-purple-500/20 transition-all outline-none"
+                  className="w-full px-4 py-3 rounded-lg bg-white/50 dark:bg-gray-700/50 border border-purple-500/20 focus:border-purple-500/50 focus:ring-2 focus:ring-purple-500/20 transition-all outline-none dark:text-white"
                   onChange={handleChange}
                   value={formData.email}
                   placeholder="@email.com"
@@ -252,7 +242,7 @@ const Form = () => {
               </div>
 
               <div>
-                <label htmlFor="telefono" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="telefono" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   {translations[language].phone}
                 </label>
                 <input
@@ -260,7 +250,7 @@ const Form = () => {
                   name="telefono"
                   id="telefono"
                   required
-                  className="w-full px-4 py-3 rounded-lg bg-white/50 border border-purple-500/20 focus:border-purple-500/50 focus:ring-2 focus:ring-purple-500/20 transition-all outline-none"
+                  className="w-full px-4 py-3 rounded-lg bg-white/50 dark:bg-gray-700/50 border border-purple-500/20 focus:border-purple-500/50 focus:ring-2 focus:ring-purple-500/20 transition-all outline-none dark:text-white"
                   onChange={handleChange}
                   value={formData.telefono}
                   placeholder="+52 1234567890"
@@ -269,7 +259,7 @@ const Form = () => {
             </div>
 
             <div>
-              <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="service" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 {translations[language].serviceLabel}
               </label>
               <select
@@ -278,11 +268,11 @@ const Form = () => {
                 value={formData.service}
                 onChange={handleServiceChange}
                 required
-                className="w-full px-4 py-3 rounded-lg bg-white/50 border border-purple-500/20 focus:border-purple-500/50 focus:ring-2 focus:ring-purple-500/20 transition-all outline-none"
+                className="w-full px-4 py-3 rounded-lg bg-white/50 dark:bg-gray-700/50 border border-purple-500/20 focus:border-purple-500/50 focus:ring-2 focus:ring-purple-500/20 transition-all outline-none dark:text-white"
               >
-                <option value="">{translations[language].selectOption}</option>
+                <option value="" className="dark:bg-gray-800">{translations[language].selectOption}</option>
                 {Object.values(serviceValues[language]).map((service) => (
-                  <option key={service} value={service}>
+                  <option key={service} value={service} className="dark:bg-gray-800">
                     {service}
                   </option>
                 ))}
@@ -290,7 +280,7 @@ const Form = () => {
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 {translations[language].messageLabel}
               </label>
               <textarea
@@ -298,7 +288,7 @@ const Form = () => {
                 id="message"
                 rows="6"
                 required
-                className="w-full px-4 py-3 rounded-lg bg-white/50 border border-purple-500/20 focus:border-purple-500/50 focus:ring-2 focus:ring-purple-500/20 transition-all outline-none resize-none"
+                className="w-full px-4 py-3 rounded-lg bg-white/50 dark:bg-gray-700/50 border border-purple-500/20 focus:border-purple-500/50 focus:ring-2 focus:ring-purple-500/20 transition-all outline-none resize-none dark:text-white"
                 onChange={handleChange}
                 value={formData.message}
                 placeholder={translations[language].messagePlaceholder}
@@ -309,7 +299,7 @@ const Form = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className={`group bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 flex items-center gap-2 mx-auto ${
+                className={`group bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white dark:text-white/90 px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 dark:hover:shadow-purple-500/10 flex items-center gap-2 mx-auto ${
                   loading ? 'opacity-70 cursor-not-allowed' : ''
                 }`}
               >
@@ -325,4 +315,3 @@ const Form = () => {
 };
 
 export default Form;
-
