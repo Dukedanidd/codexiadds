@@ -28,7 +28,7 @@ const FAQ = () => {
         answer: (
           <div className="space-y-2 leading-relaxed">
             <p>
-              Costs depend on the project's complexity, required features, and
+              Costs depend on the project&apos;s complexity, required features, and
               estimated time. We provide personalized quotes after an initial
               consultation.
             </p>
