@@ -51,6 +51,16 @@ const FAQ = () => {
   return (
     <section className="relative py-20 overflow-hidden bg-white dark:bg-[#12182a]">
       <div className="container mx-auto px-4 max-w-4xl">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white"
+        >
+          {language === 'en' ? 'Frequently Asked Questions' : 'Preguntas Frecuentes'}
+        </motion.h2>
+        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -65,17 +75,29 @@ const FAQ = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden"
+              className="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200"
             >
               <button
                 onClick={() => setActiveIndex(activeIndex === index ? null : index)}
-                className="flex justify-between items-center w-full p-6 text-left bg-transparent hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors duration-200"
+                className={`flex justify-between items-center w-full p-6 text-left transition-all duration-200
+                  ${activeIndex === index 
+                    ? 'bg-indigo-500 text-white dark:bg-indigo-600' 
+                    : 'bg-transparent hover:bg-gray-50 dark:hover:bg-gray-800/50'
+                  }`}
               >
-                <span className="font-medium text-gray-900 dark:text-white">
+                <span className={`font-medium ${
+                  activeIndex === index 
+                    ? 'text-white' 
+                    : 'text-gray-900 dark:text-white'
+                }`}>
                   {faq.question}
                 </span>
                 <ChevronDown
-                  className={`w-5 h-5 text-gray-500 dark:text-gray-400 transition-transform duration-300 ${
+                  className={`w-5 h-5 ${
+                    activeIndex === index 
+                      ? 'text-white' 
+                      : 'text-gray-500 dark:text-gray-400'
+                  } transition-transform duration-300 ${
                     activeIndex === index ? "rotate-180" : ""
                   }`}
                 />
