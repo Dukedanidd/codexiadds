@@ -54,10 +54,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="bg-white dark:bg-gray-900 relative">
-        {/* Fondo con gradiente radial */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(67,56,202,0.05),rgba(255,255,255,0))] dark:bg-[radial-gradient(circle_at_center,rgba(67,56,202,0.03),rgba(0,0,0,0))]" />
-
+      <header className="bg-white dark:bg-[#12182a] relative">
         <nav className="container flex items-center justify-between px-8 py-4 mx-auto relative z-10">
           {/* ... Logo existente ... */}
           <div className="flex lg:flex-1">

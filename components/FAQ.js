@@ -13,143 +13,70 @@ const FAQ = () => {
     en: [
       {
         question: "What services does CodexiaDDS offer?",
-        answer: (
-          <div className="space-y-2 leading-relaxed">
-            <p>
-              We offer software development tailored to your business needs. From
-              basic websites to advanced platforms, we work with you to create the
-              best solution.
-            </p>
-          </div>
-        ),
+        answer: "We offer custom software development, web applications, mobile apps, enterprise systems, and e-commerce solutions. Our specialized team works with the latest technologies to create innovative and scalable solutions."
       },
       {
         question: "How are project costs calculated?",
-        answer: (
-          <div className="space-y-2 leading-relaxed">
-            <p>
-              Costs depend on the project&apos;s complexity, required features, and
-              estimated time. We provide personalized quotes after an initial
-              consultation.
-            </p>
-          </div>
-        ),
+        answer: "Costs are calculated based on project scope, technical complexity, development time, and required resources. We perform a detailed analysis of your requirements to provide a transparent and competitive budget."
       },
       {
         question: "What is the development process?",
-        answer: (
-          <div className="space-y-2 leading-relaxed">
-            <p>Our process includes:</p>
-            <ul className="list-disc pl-5">
-              <li>Initial consultation to understand your needs.</li>
-              <li>Design and planning.</li>
-              <li>Development and testing.</li>
-              <li>Final delivery and post-launch support.</li>
-            </ul>
-          </div>
-        ),
+        answer: "We follow an agile methodology that includes: 1) Analysis and planning, 2) Design and architecture, 3) Iterative development, 4) Continuous testing, 5) Implementation, and 6) Post-launch support. We maintain constant communication throughout the process."
       },
       {
         question: "Do you offer support and maintenance?",
-        answer: (
-          <div className="space-y-2 leading-relaxed">
-            <p>
-              We provide technical support and maintenance options to ensure your
-              website works perfectly after launch. Additionally, we can assist
-              with any updates or improvements you need, such as adding new
-              features or redesigning elements.
-            </p>
-          </div>
-        ),
-      },
+        answer: "Yes, we provide ongoing technical support and maintenance services to ensure your software runs optimally. We offer different support plans tailored to your specific needs."
+      }
     ],
     es: [
       {
         question: "¿Qué servicios ofrece CodexiaDDS?",
-        answer: (
-          <div className="space-y-2 leading-relaxed">
-            <p>
-              Ofrecemos desarrollo de software adaptado a las necesidades de tu
-              negocio. Desde sitios básicos hasta plataformas avanzadas,
-              trabajamos contigo para crear la mejor solución.
-            </p>
-          </div>
-        ),
+        answer: "Ofrecemos desarrollo de software personalizado, aplicaciones web, móviles, sistemas empresariales y soluciones de comercio electrónico. Nuestro equipo especializado trabaja con las últimas tecnologías para crear soluciones innovadoras y escalables."
       },
       {
         question: "¿Cómo se calculan los costos de los proyectos?",
-        answer: (
-          <div className="space-y-2 leading-relaxed">
-            <p>
-              El costo depende de la complejidad del proyecto, las funciones
-              necesarias y el tiempo estimado. Ofrecemos presupuestos
-              personalizados después de una consulta inicial.
-            </p>
-          </div>
-        ),
+        answer: "Los costos se calculan en base al alcance del proyecto, complejidad técnica, tiempo de desarrollo y recursos necesarios. Realizamos un análisis detallado de sus requerimientos para proporcionar un presupuesto transparente y competitivo."
       },
       {
         question: "¿Cómo es el proceso de desarrollo?",
-        answer: (
-          <div className="space-y-2 leading-relaxed">
-            <p>Nuestro proceso incluye:</p>
-            <ul className="list-disc pl-5">
-              <li>Consulta inicial para entender tus necesidades.</li>
-              <li>Diseño y planificación.</li>
-              <li>Desarrollo y pruebas.</li>
-              <li>Entrega final y soporte post-lanzamiento.</li>
-            </ul>
-          </div>
-        ),
+        answer: "Seguimos una metodología ágil que incluye: 1) Análisis y planificación, 2) Diseño y arquitectura, 3) Desarrollo iterativo, 4) Pruebas continuas, 5) Implementación y 6) Soporte post-lanzamiento. Mantenemos una comunicación constante durante todo el proceso."
       },
       {
         question: "¿Ofrecen soporte y mantenimiento?",
-        answer: (
-          <div className="space-y-2 leading-relaxed">
-            <p>
-              Brindamos soporte técnico y opciones de mantenimiento para
-              asegurarnos de que tu sitio funcione perfectamente después del
-              lanzamiento. Además, podemos ayudarte con cualquier actualización o
-              mejora que necesites, ya sea agregar nuevas funciones o rediseñar
-              elementos.
-            </p>
-          </div>
-        ),
-      },
-    ],
+        answer: "Sí, proporcionamos soporte técnico continuo y servicios de mantenimiento para garantizar que su software funcione de manera óptima. Ofrecemos diferentes planes de soporte adaptados a sus necesidades específicas."
+      }
+    ]
   };
 
   return (
-    <section className="relative py-20 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-50/25 to-transparent dark:via-purple-900/10" />
-      
-      <div className="relative container mx-auto px-4">
+    <section className="relative py-20 overflow-hidden bg-white dark:bg-[#12182a]">
+      <div className="container mx-auto px-4 max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="max-w-3xl mx-auto space-y-6"
+          className="space-y-6"
         >
           {faqs[language].map((faq, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="rounded-2xl bg-white dark:bg-gray-800/50 shadow-xl dark:shadow-gray-900/10 overflow-hidden"
+              className="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden"
             >
               <button
                 onClick={() => setActiveIndex(activeIndex === index ? null : index)}
-                className="flex justify-between items-center w-full p-6 text-left"
+                className="flex justify-between items-center w-full p-6 text-left bg-transparent hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors duration-200"
               >
                 <span className="font-medium text-gray-900 dark:text-white">
                   {faq.question}
                 </span>
                 <ChevronDown
                   className={`w-5 h-5 text-gray-500 dark:text-gray-400 transition-transform duration-300 ${
-                    activeIndex === index ? "transform rotate-180" : ""
+                    activeIndex === index ? "rotate-180" : ""
                   }`}
                 />
               </button>
@@ -161,11 +88,11 @@ const FAQ = () => {
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="px-6 pb-6"
+                    className="overflow-hidden"
                   >
-                    <p className="text-gray-600 dark:text-gray-300">
+                    <div className="p-6 pt-0 text-gray-600 dark:text-gray-300">
                       {faq.answer}
-                    </p>
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>

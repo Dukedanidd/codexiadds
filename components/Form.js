@@ -139,7 +139,7 @@ const Form = () => {
   };
 
   return (
-    <section id="contact-form" className="relative bg-transparent">
+    <section id="contact-form" className="relative bg-white dark:bg-[#12182a]">
       {notification.show && (
         <div
           className={`fixed bottom-4 right-4 p-4 rounded-lg shadow-lg transition-all duration-500 transform ${
@@ -156,7 +156,6 @@ const Form = () => {
         </div>
       )}
 
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(67,56,202,0.03),rgba(255,255,255,0))] dark:bg-[radial-gradient(circle_at_center,rgba(67,56,202,0.03),rgba(0,0,0,0))]" />
       <div className="relative max-w-4xl mx-auto px-8 py-24">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

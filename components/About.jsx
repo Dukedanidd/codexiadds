@@ -80,25 +80,7 @@ export default function AboutSection() {
   const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8])
 
   return (
-    <section id='about' className="py-20 px-4 relative min-h-screen bg-transparent dark:bg-gray-900" ref={containerRef}>
-      {/* Fondo con patrón minimalista */}
-      <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none">
-        <div className="absolute inset-0 grid grid-cols-6 gap-4">
-          {[...Array(24)].map((_, i) => (
-            <div
-              key={i}
-              className="h-full w-full bg-gradient-to-br from-purple-500 to-blue-500 rounded-full blur-xl"
-              style={{
-                opacity: Math.random() * 0.3,
-                transform: `translate(${Math.random() * 100}%, ${
-                  Math.random() * 100
-                }%)`,
-              }}
-            />
-          ))}
-        </div>
-      </div>
-
+    <section id='about' className="py-20 px-4 relative min-h-screen bg-white dark:bg-[#12182a]" ref={containerRef}>
       <div className="container mx-auto max-w-6xl relative">
         <motion.div
           style={{ opacity, scale }}
