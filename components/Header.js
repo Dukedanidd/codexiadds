@@ -166,9 +166,51 @@ const Header = () => {
             exit={{ x: "100%" }}
             className="fixed inset-y-0 right-0 z-10 w-full px-8 py-4 overflow-y-auto bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl sm:max-w-sm"
           >
-            {/* ... Contenido del menú móvil ... */}
+            {/* Botón de cerrar */}
+            <div className="flex justify-end">
+              <button
+                type="button"
+                className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+                onClick={() => setIsOpen(false)}
+              >
+                <span className="sr-only">Close menu</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-6 h-6 text-gray-900 dark:text-gray-100"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
 
-            {/* Añadir botones de tema e idioma en el menú móvil */}
+            {/* Links del menú móvil */}
+            <div className="mt-6 flow-root">
+              <div className="flex flex-col gap-4">
+                {links.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-xl text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors"
+                    onClick={(e) => {
+                      handleLinkClick(e, link);
+                      setIsOpen(false);
+                    }}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Botones de tema e idioma */}
             <div className="py-4 mt-4 flex flex-col gap-4">
               <button
                 onClick={toggleTheme}
