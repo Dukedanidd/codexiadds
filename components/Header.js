@@ -94,7 +94,7 @@ const Header = () => {
               >
                 <Link
                   href={link.href}
-                  className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors"
+                  className="text-xl text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors"
                   title={link.label}
                   onClick={(e) => handleLinkClick(e, link)}
                 >
