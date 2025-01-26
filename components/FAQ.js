@@ -49,7 +49,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="relative py-20 overflow-hidden bg-white dark:bg-[#12182a]">
+    <section id='faq'className="relative py-20 overflow-hidden bg-white dark:bg-[#12182a]">
       <div className="container mx-auto px-4 max-w-4xl">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

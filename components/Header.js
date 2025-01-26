@@ -38,9 +38,8 @@ const Header = () => {
       label: dictionary?.navigation.about,
     },
     {
-      href: "/#portfolio",
-      label: dictionary?.navigation.portfolio,
-      showModal: true,
+      href: '/#contact-form',
+      label: dictionary?.navigation.contact,
     },
     {
       href: "/#faq",
