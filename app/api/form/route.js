@@ -3,6 +3,13 @@ import Form from "@/models/Form";
 import connectMongo from '@/libs/mongoose';
 
 export async function POST(request) {
+    // Agregar headers CORS a la respuesta POST
+    const headers = {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'POST, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    };
+
     try {
         await connectMongo();
         
@@ -41,7 +48,10 @@ export async function POST(request) {
 
         return NextResponse.json(
             { message: "Formulario enviado exitosamente", data: formData },
-            { status: 201 }
+            { 
+                status: 201,
+                headers: headers 
+            }
         );
 
     } catch (error) {
@@ -51,13 +61,19 @@ export async function POST(request) {
         if (error.name === 'MongooseError' || error.name === 'MongoError') {
             return NextResponse.json(
                 { error: "Error de conexión con la base de datos" },
-                { status: 503 }
+                { 
+                    status: 503,
+                    headers: headers 
+                }
             );
         }
 
         return NextResponse.json(
             { error: "Error interno del servidor" },
-            { status: 500 }
+            { 
+                status: 500,
+                headers: headers 
+            }
         );
     }
 }
